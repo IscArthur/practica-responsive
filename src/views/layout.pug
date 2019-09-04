@@ -24,15 +24,15 @@ body
 	include messages.pug
 	include menu.pug
 	include menu-profile.pug
-	include sos.pug
+	//- include sos.pug
 
 	block content
 
-	script(src="/public/js/vendors/vendors.min.js")
-	script(src="/public/js/main.min.js")
-	script.
-		document.addEventListener('DOMContentLoaded', function(){
-			UTILS.menu();
-			UTILS.sos();
-		});
+	//- script(src="/public/js/vendors/vendors.min.js")
+	//- script(src="/public/js/main.min.js")
+	//- script.
+	//- 	document.addEventListener('DOMContentLoaded', function(){
+	//- 		UTILS.menu();
+	//- 		UTILS.sos();
+	//- 	});
 	block scripts
