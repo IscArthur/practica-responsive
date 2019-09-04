@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="advertencia_1_" width="32.522" height="29.48" data-name="advertencia (1)" viewBox="0 0 32.522 29.48">
+    <defs>
+        <style>
+            .cls-1{fill:#3b4145}.cls-2{fill:#525a61}.cls-3{fill:#ffb751}.cls-4{fill:#ffd764}
+        </style>
+    </defs>
+    <path id="Trazado_77" d="M202.367 26.4l11.353 19.665a4.907 4.907 0 0 1-4.252 7.358h-11.353l-3.926-14.74 3.926-14.74a4.9 4.9 0 0 1 4.252 2.457z" class="cls-1" data-name="Trazado 77" transform="translate(-181.854 -23.946)"/>
+    <path id="Trazado_78" d="M12.009 26.4L.656 46.069a4.907 4.907 0 0 0 4.252 7.358h11.353V23.946a4.9 4.9 0 0 0-4.252 2.454z" class="cls-2" data-name="Trazado 78" transform="translate(0 -23.946)"/>
+    <path id="Trazado_79" d="M271.15 76.018L259.8 56.353a2.955 2.955 0 0 0-2.468-1.475l9.71 25.553h1.558a2.944 2.944 0 0 0 2.552-4.413z" class="cls-3" data-name="Trazado 79" transform="translate(-240.983 -52.913)"/>
+    <path id="Trazado_80" d="M57.2 75.989a3.306 3.306 0 0 1 .339 1.468A2.768 2.768 0 0 1 55 80.4H33.851a2.944 2.944 0 0 1-2.551-4.411l11.352-19.665a2.957 2.957 0 0 1 2.548-1.477h.084a2.525 2.525 0 0 1 2.117 1.475z" class="cls-4" data-name="Trazado 80" transform="translate(-28.943 -52.884)"/>
+    <path id="Trazado_81" d="M256 354.131v3.269a1.636 1.636 0 1 0 0-3.272z" class="cls-1" data-name="Trazado 81" transform="translate(-239.739 -333.158)"/>
+    <path id="Trazado_82" d="M231.881 354.131c.181 0 .327.732.327 1.636s-.147 1.636-.327 1.636a1.636 1.636 0 0 1 0-3.272z" class="cls-2" data-name="Trazado 82" transform="translate(-215.62 -333.158)"/>
+    <path id="Trazado_83" d="M256 132.646v12.106a1.636 1.636 0 0 0 1.636-1.636v-8.834a1.636 1.636 0 0 0-1.636-1.636z" class="cls-1" data-name="Trazado 83" transform="translate(-239.739 -125.741)"/>
+    <path id="Trazado_84" d="M231.881 132.646c.181 0 .327.732.327 1.636v8.834c0 .9-.147 1.636-.327 1.636a1.636 1.636 0 0 1-1.636-1.636v-8.834a1.636 1.636 0 0 1 1.636-1.636z" class="cls-2" data-name="Trazado 84" transform="translate(-215.62 -125.741)"/>
+</svg>

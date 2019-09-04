@@ -1,0 +1,76 @@
+extends ../layout.pug
+
+block content
+	include ../nav.pug
+	+menu(false, true)
+	section.with-footer.profile-section.container-fluid
+		.row
+			+menu-profile(false, false, true)
+			article.col-12.col-md-6.col-lg-9.col-xl-9.user-data-intel
+				.container
+					.row.justify-content-center
+						.title.col-12.col-md-12.col-lg-8
+							img(src="/public/icons/factura.svg", alt="Mi usuario")
+							h2 Mi Historial de Compras
+						.title.col-12.col-md-12.col-lg-8.small-margin.can-close-object.history(data-target="history-1")
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g><path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"></path></g></svg>
+							h3 Certificado 26369PKL96 <span class="active">activo</span> 
+						hr.col-12.col-md-8.fake-hr
+						.history-item.col-12.col-md-7#history-1
+							.holder
+								p.title Certificado de compra
+								p.content 78569PKL96
+							.holder
+								p.title Fecha de compra
+								p.content 18 Abril 2019
+							.holder
+								p.title Fecha de vencimiento
+								p.content 129 Abril 2019
+							.holder
+								p.title Pasajeros
+								p.content 2 Adultos, 0 Mayores
+							.holder
+								p.title Plan
+								p.content Euroschengen
+							.print-view-send
+								a(href="#print")
+									img(src="/public/icons/print.svg", alt="Imprimir")
+								a(href="#view")
+									img(src="/public/icons/pdf.svg", alt="Ver PDF")
+								a(href="#email")
+									img(src="/public/icons/email.svg", alt="Enviar a tu correo")
+						.title.col-12.col-md-12.col-lg-8.small-margin.can-close-object.history(data-target="history-2")
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g><path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"></path></g></svg>
+							h3 Certificado 26369PKL96 <span>vencido</span> 
+						hr.col-12.col-md-8.fake-hr
+						.history-item.col-12.col-md-7#history-2
+							.holder
+								p.title Certificado de compra
+								p.content 78569PKL96
+							.holder
+								p.title Fecha de compra
+								p.content 18 Abril 2019
+							.holder
+								p.title Fecha de vencimiento
+								p.content 129 Abril 2019
+							.holder
+								p.title Pasajeros
+								p.content 2 Adultos, 0 Mayores
+							.holder
+								p.title Plan
+								p.content Euroschengen
+							.print-view-send
+								a(href="#print")
+									img(src="/public/icons/print.svg", alt="Imprimir")
+								a(href="#view")
+									img(src="/public/icons/pdf.svg", alt="Ver PDF")
+								a(href="#email")
+									img(src="/public/icons/email.svg", alt="Enviar a tu correo")
+	include ../footer.pug
+
+block scripts
+	script.
+		document.addEventListener('DOMContentLoaded', function(){
+			PROFILE.canOpen();
+			PROFILE.profileMenu();
+		});

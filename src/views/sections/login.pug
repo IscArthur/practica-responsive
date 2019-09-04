@@ -1,0 +1,22 @@
+extends ../layout.pug
+
+block content
+	//- Aquí va el contenido HTML de pug
+	section.login-screen.container-fluid
+		article.login-items.row
+			.left-side.col-12.col-md-12.col-lg-6.col-xl-6.data-asegurados
+				img.login-logo(src="/public/logos/segurviaje-gris.svg", alt="Segurviaje Logo")
+				h1.asegurado-title.my-4 Iniciar Sesión
+				form.login-form#login-form(method="POST", action="/login")
+					.form-group.col-12.col-sm-12.col-md-8.offset-md-2.col-lg-8.offset-lg-2.col-xl-8.offset-xl-2
+						label(for="email") Correo
+						input.form-control(type="email", id="email", name="email")
+					.form-group.col-12.col-sm-12.col-md-8.offset-md-2.col-lg-8.offset-lg-2.col-xl-8.offset-xl-2
+						label(for="password") Password
+						input.form-control(type="password", id="password", name="password")
+					.form-buttons-holder
+						button.btn.login(type='submit') Iniciar Sesión
+				hr.d-block.fake-hr.my-4
+				p.register ¿Todavía no te has registrado? <a href="/registro">Regístrate</a>
+				small.mini Al usar esta app, estás aceptando los Términos y condiciones generales de uso
+			.right-side.col-12.col-lg-6.col-xl-6.d-none.d-sm-none.d-md-none.d-lg-block.d-xl-block

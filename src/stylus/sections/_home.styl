@@ -1,0 +1,134 @@
+.section-inicio{
+	h1.title-inicio{
+		color $c-red
+		font-family $t-bold
+		font-size 44px
+		margin-top 50px
+		position relative
+		text-align center
+		text-transform uppercase
+		&:after{
+			position-select(50%,-5px,absolute,true,false)
+			background $c-red
+			content ""
+			height 3px
+			transform translateX(-50%)
+			width 36px
+		}
+	}
+	.home-user-poliza{
+		p{
+			color $c-black
+			font-family $t-bold
+			font-size 30px
+			margin 30px 0 20px
+			text-transform uppercase
+			span{
+				color grey
+				font-family $t
+			}
+		}
+	}
+	.sos-holder{
+		flex-container()
+		.sos-btn{
+			width 500px
+			a{
+				background $c-yellow
+				color $c-black
+				display block
+				font-family $t-bold
+				font-size 20px
+				padding 20px 28px
+				text-decoration none
+				width 100%
+				img{
+					margin-right 10px
+				}
+			}
+		}
+	}
+	@media (max-width: 991px){
+		h1.title-inicio{
+			font-size 24px
+		}
+		.home-user-poliza{
+			p{
+				font-size 20px
+			}
+		}
+	}
+}
+section.data-inicio{
+	margin 30px 0
+	padding 0
+	.item-data-inicio{
+		flex-container(center, row, flex-start)
+		background-size cover !important
+		color $c-white
+		font-family $t-medium
+		height 300px
+		overflow hidden
+		padding 0 50px
+		position relative
+		text-decoration none
+		h2{
+			font-size 16px
+			margin 0
+			position relative
+			z-index 2
+			&:after{
+				position-select(0,-10px,absolute,true,false)
+				background $c-red
+				content ""
+				height 3px
+				transition all .25s ease-in-out
+				width 30px
+			}
+		}
+		.bg-gradient{
+			position-select(0)
+			background linear-gradient(to top, $c-black, transparent)
+			height 100%
+			opacity .72
+			transition all .25s ease-in-out
+			width 100%
+			z-index 1
+		}
+		&:hover{
+			h2{
+				&:after{
+					width 100%
+				}
+			}
+			.bg-gradient{
+				background linear-gradient(to top, $c-black, rgba($c-black, .25))
+				opacity .95
+			}
+		}
+		&:first-child{
+			margin-right 30px
+		}
+		&:nth-child(2){
+			margin-right 30px
+		}
+	}
+	@media (max-width: 991px){
+		margin 15px 0
+		.row{
+			justify-content space-between !important
+		}
+		.item-data-inicio{
+			flex-container()
+			height 140px
+			margin-right 0 !important
+			max-width 49.5%
+			&:last-child{
+				height 176px
+				max-width 100%
+				margin-top 1%
+				width 100% !important
+			}
+		}
+	}
+}

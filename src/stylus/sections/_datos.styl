@@ -1,0 +1,310 @@
+.meta-data-datos{
+	margin-bottom 20px
+	.data-intel{
+		background rgba($c-bg-gray, .5)
+		.intel-item{
+			flex-container(center, row, space-between)
+			border-bottom 1px solid rgba($c-gray, .15)
+			color $c-gray
+			font-size 12px
+			line-height 1
+			margin-bottom 10px
+			padding 15px 26px
+			width 100%
+			span{
+				font-size 16px
+				margin 0
+				max-width 50%
+				min-width 50%
+				text-align right
+				width 50%
+			}
+			&:last-child{
+				border-bottom 0px solid transparent
+				margin-bottom 0
+			}
+			&.secured{
+				flex-container(center, column, flex-start)
+				text-align left
+				width 100%
+				span{
+					text-align left
+					margin-bottom 5px
+					max-width 100%
+					min-width 100%
+					width 100%
+					&:last-child{
+						margin-bottom 0
+					}
+				}
+			}
+		}
+	}
+	.data-price{
+		flex-container(center, row, flex-start)
+		background linear-gradient(118deg, $c-black-2 0%, $c-black-2 79%, $c-white 79%, $c-white 100%)
+		color $c-white
+		font-family $t-medium
+		height 56px
+		padding-left 26px
+		margin-top 20px
+		span{
+			margin-left 5px
+		}
+	}
+	.data-title{
+		flex-container(flex-start, column, center)
+		background $c-bg-gray
+		border-bottom 1px solid rgba($c-gray, .25)
+		color $c-gray
+		font-size 12px
+		line-height 1
+		padding 15px 26px
+		span{
+			color $c-black
+			font-size 16px
+			margin 0
+		}
+	}
+	.small-p{
+		font-size 14px
+		text-align center
+	}
+	#scroller-container{
+		transition all .5s ease-in-out
+		&.fixed, &.hold-it{
+			bottom auto
+			position fixed
+			top 115px
+			width 255px
+			@media (max-width: 1199px){
+				width 210px
+			}
+			@media (max-width: 767px){
+				width 100%
+			}
+		}
+		&.fixed{
+			top 115px
+			@media (max-width: 1024px){
+				top 67px
+			}
+			@media (max-width: 767px){
+				position relative
+				top 0
+			}
+		}
+		&.hold-it{
+			bottom 80px
+			top auto
+			position absolute
+		}
+	}
+}
+
+.data-asegurados{
+	margin-bottom 50px
+	input{
+		border 1px solid $c-form
+		border-radius 0
+		box-shadow none !important
+		outline none !important
+		position relative
+		&#id-data{
+			text-transform uppercase
+		}
+		&.correcto{
+			border 1px solid $c-blue !important
+		}
+		&.error{
+			border 1px solid $c-red !important
+		}
+		&:focus, &:active{
+			border 1px solid $c-blue
+		}
+		&:disabled{
+			opacity .5
+			cursor not-allowed
+		}
+	}
+	label{
+		color $c-form
+		font-family $t
+		font-size 14px
+		margin 0
+	}
+	select{
+		// border 0
+		border 1px solid $c-form
+		border-radius 0
+		box-shadow none !important
+		font-family $t
+		height 38px
+		outline none !important
+		&:focus, &:active{
+			border 1px solid $c-blue
+		}
+		&:disabled{
+			opacity .5 !important
+			cursor not-allowed !important
+		}
+	}
+	.asegurado-1{
+		margin-bottom 30px
+	}
+	.asegurado-title{
+		color $c-gray
+		font-family $t-light
+		font-size 18px
+		text-transform uppercase
+		&.error{
+			color $c-red
+			font-family $t-bold
+		}
+	}
+	.check-holder{
+		flex-container(center, row, space-around)
+		padding-left 0
+		.form-check{
+			flex-container(center, row, flex-start)
+			margin 5px 0 0 0
+			padding 0 0 0 5px
+			input{
+				margin-top 0
+			}
+			label{
+				margin 5px 0 0 5px
+			}
+			&:focus-within{
+				label{
+					color $c-blue
+				}
+			}
+		}
+	}
+	.form-row{
+		p{
+			color rgba($c-black, .6)
+			margin 10px 0
+		}
+		&.with-checkboxes{
+			.form-check{
+				margin-left 20px
+				&:focus-within{
+					label{
+						color $c-blue
+					}
+				}
+				&.disabled{
+					label, input{
+						opacity .25
+					}
+				}
+			}
+		}
+	}
+	.input-with-icon{
+		flex-container()
+		position relative
+		input{
+			height 38px
+			padding .375rem .75rem .375rem 50px
+			width 100%
+		}
+		svg{
+			position-select(16px, 50%)
+			height auto
+			min-width 18px
+			transform translateY(-50%)
+			width 18px
+			z-index 10
+		}
+		.cls-1{
+			fill $c-form
+		}
+		&:focus-within{
+			.cls-1{
+				fill $c-blue
+			}
+		}
+	}
+	.form-buttons-holder{
+		flex-container(center, row, flex-end)
+		margin-top 30px
+		.btn{
+			background $c-red
+			border-radius 30px
+			color $c-white
+			font-family $t-medium
+			line-height 1
+			padding 10px 16px
+			&:first-child{
+				margin-right 20px
+			}
+			&:disabled{
+				opacity .25
+			}
+		}
+	}
+	.form-group{
+		position relative
+		&:after{
+			position-select(6px,-17px,absolute,true,false)
+			color $c-red
+			content attr(data-error)
+			font-size 12px
+			pointer-events none
+			width 100%
+		}
+	}
+}
+
+#the-content-tresh{
+	.loading{
+		height 100px
+		opacity 1
+		overflow hidden
+		position relative
+		transition all .25s linear
+		width 100%
+		p{
+			position-select(50%, 50%)
+			color $c-white
+			font-family $t
+			margin 0
+			opacity .5
+			transform translate(-50%, -50%)
+			z-index 2
+		}
+		.circle{
+			position-select(50%, 50%)
+			animation loader-cotizador 3s infinite
+			background $c-red
+			border-radius 50%
+			height 10px
+			opacity 0
+			transform translate(-50%, -50%) scale(0)
+			transition all .25s linear
+			width 10px
+			&:nth-child(2){
+				animation-delay 1s
+			}
+			&:nth-child(3){
+				animation-delay 2s
+			}
+		}
+		&.remove{
+			height 0
+			opacity 0
+		}
+	}
+}
+.error-response{
+	background $c-red
+	border-radius 30px
+	border none
+	color $c-white
+	font-family $t-bold
+	font-size 16px
+	padding 5px 10px
+}

@@ -1,0 +1,20 @@
+mixin menu-profile($cuenta, $info, $hist)
+	article.col-12.col-md-6.col-lg-3.col-xl-3.user-menu#menuShadow
+		.data-user
+			.background-img(style="background: url(https://media.giphy.com/media/9oIiahBxnTe4WOpPWX/giphy.gif) no-repeat center")
+			.img-holder
+				img(src="https://media.giphy.com/media/9oIiahBxnTe4WOpPWX/giphy.gif", alt="Rodrigo García")
+				a#edit(href="#edit")
+					img(src="/public/icons/pencil@3x.png", alt="Editar")
+			h1 Rodrigo García
+			p ¡Viajero aventurero de mundo!
+		ul.user-menu-list#profile-menu-list
+			- var $one = ($cuenta) ? 'active' : '';
+			li(class=$one)
+				a(href="/perfil") Mi Información
+			- var $two = ($info) ? 'active' : '';
+			li(class=$two)
+				a(href="/perfil/cuenta") Mi Cuenta
+			- var $three = ($hist) ? 'active' : '';
+			li(class=$three)
+				a(href="/perfil/historial") Mi Historial de Compras

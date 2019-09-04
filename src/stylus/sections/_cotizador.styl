@@ -1,0 +1,408 @@
+.filters{
+	position relative
+	@media (max-width: 767px){
+		margin-bottom 20px
+	}
+	.drop-down{
+		flex-container(flex-start, column, flex-start)
+		border-bottom 2px solid $c-bg-gray
+		cursor pointer
+		height 56px
+		transition all .25s ease-in-out
+		.down-title{
+			flex-container(center, row, flex-start)
+			margin 0
+			padding 15px 8px
+			position relative
+			width 100%
+			p{
+				color $c-red
+				font-family $t-book
+				font-size 15px
+				margin 0 0 0 10px
+			}
+			.arrow{
+				position-select(5px,50%,absolute,false,true)
+				transform translate(0, -50%) rotate(180deg) scale(.7)
+				transition transform .25s ease-in-out
+			}
+		}
+		.sub-down{
+			background rgba($c-bg-gray, .5)
+			cursor auto
+			height 0
+			margin 0
+			overflow hidden
+			padding 0 40px
+			transition all .25s ease-in-out
+			width 100%
+			p{
+				color $c-gray
+				font-size 14px
+			}
+			input, select{
+				-webkit-appearance none
+				background transparent
+				border 1px solid transparent
+				border-radius 0
+				box-shadow none !important
+				color $c-gray
+				font-family $t-light
+				font-size 14px
+				height 100%
+				outline none !important
+				padding 0 32px
+				width 100%
+				&:active, &:focus{
+					border 1px solid rgba($c-gray, .25)
+					border-bottom 1px solid transparent
+				}
+			}
+			input{
+				color $c-gray
+				text-align center
+			}
+			&.with-select{
+				padding 0
+			}
+			&.pasajeros{
+				flex-container()
+				padding 0
+				.botonera{
+					flex-container(center, column, center)
+					width 50%
+					.bottom{
+						flex-container(center, column, center)
+						height 36px
+						span{
+							color $c-gray
+							font-size 12px
+						}
+					}
+					.top{
+						flex-container()
+						height 56px
+						position relative
+						button{
+							position-select(0,50%)
+							background transparent
+							border none
+							box-shadow none !important
+							outline none !important
+							transform translateY(-50%) scale(1)
+							transition all .15s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+							&:last-child{
+								left auto
+								right 0
+							}
+							&:hover{
+								transform translateY(-50%) scale(1.2)
+							}
+							&:active{
+								opacity .75
+								transform translateY(-50%) scale(.9)
+							}
+						}
+						input{
+							color $c-gray
+							height 100%
+							margin-left 10%
+							text-align center
+							width 90%
+						}
+					}
+				}
+			}
+		}
+		&.open{
+			height 112px
+			.down-title{
+				.arrow{
+					transform translate(0, -50%) rotate(0deg) scale(.7)
+				}
+			}
+			.sub-down{
+				height 56px
+			}
+		}
+		&.passengers{
+			&.open{
+				height 148px
+				.sub-down{
+					height 92px
+				}
+			}
+		}
+	}
+	.btn-holder{
+		flex-container()
+		margin-top 20px
+		.fake-btn{
+			background $c-red
+			color $c-white
+		}
+	}
+	.fake-filter-title{
+		flex-container(center, row, flex-start)
+		background $c-bg-gray
+		color $c-gray
+		font-family $t-medium
+		font-size 16px
+		height 56px
+		padding 0 16px
+	}
+}
+.plan-content{
+	min-height 500px
+	.plan-img{
+		object-fit cover
+		height 300px
+		width 100%
+	}
+	.item-plan{
+		margin-top 30px
+		.plan-asistencias{
+			margin-bottom 10px
+			width 100%
+			.asistencias-header{
+				flex-container(flex-start, column, center)
+				background $c-red
+				color $c-white
+				height 56px
+				padding 0 24px
+				position relative
+				h3{
+					font-family $t-bold
+					font-size 16px
+					line-height 1.19
+					margin 5px 0 0
+				}
+				span{
+					display block
+					font-family $t
+					font-size 12px
+					margin -5px 0 0
+					padding 0
+					&.right{
+						position-select(0,10px,absolute,false,false)
+						padding-right 24px
+						text-align left
+						width 20%
+					}
+				}
+			}
+			.asistencias-item{
+				flex-container(center, row, space-between)
+				background $c-bg-gray
+				border-bottom 1px solid rgba($c-gray, .15)
+				min-height 50px
+				padding 10px 0
+				.left{
+					color $c-gray
+					font-size 13px
+					line-height 1.2
+					padding 0 24px
+					width 80%
+				}
+				.right{
+					color $c-gray
+					font-size 13px
+					line-height 1.2
+					padding-right 24px
+					text-align left
+					width 20%
+					svg{
+						transform scale(.75)
+					}
+				}
+				&:last-child{
+					border-bottom 0 solid transparent
+				}
+				&.sub-header{
+					background $c-red
+					margin-top 10px
+					.left{
+						color $c-white
+						font-family $t-medium
+					}
+				}
+			}
+		}
+		.plan-title{
+			font-family $t-medium
+			font-size 22px
+			letter-spacing 4.3px
+			line-height 1.4
+			margin 0 0 15px
+			position relative
+			text-transform uppercase
+			&:after{
+				position-select(0,0,absolute,true,false)
+				background $c-red
+				content ""
+				height 2px
+				width 36px
+			}
+		}
+	}
+	.price-holder{
+		flex-container(center, row, space-between)
+		height 56px
+		margin-bottom 30px
+		width 100%
+		.total-price{
+			flex-container(center, row, flex-start)
+			background linear-gradient(118deg, $c-black-2 0%, $c-black-2 79%, $c-white 79%, $c-white 100%)
+			color $c-white
+			font-family $t-medium
+			font-size 14px
+			height 100%
+			line-height 1
+			padding-left 26px
+			width 200px
+		}
+		.btn-cotizador{
+			background $c-red
+			border-radius 50px
+			color $c-white
+			font-family $t-bold
+			height 44px
+			padding-top 10px
+			width 162px
+		}
+	}
+}
+
+#fillDataHere{
+	.loading{
+		height 100px
+		opacity 1
+		overflow hidden
+		position relative
+		transition all .25s linear
+		width 100%
+		.circle{
+			position-select(50%, 50%)
+			animation loader-cotizador 3s infinite
+			background $c-red
+			border-radius 50%
+			height 10px
+			opacity 0
+			transform translate(-50%, -50%) scale(0)
+			transition all .25s linear
+			width 10px
+			&:nth-child(2){
+				animation-delay 1s
+			}
+			&:nth-child(3){
+				animation-delay 2s
+			}
+		}
+		&.remove{
+			height 0
+			opacity 0
+		}
+	}
+}
+@keyframes loader-cotizador{
+	0%{
+		opacity: 0;
+		transform: translate(-50%, -50%) scale(0);
+	}
+	4%{
+		opacity: 1;
+		transform: translate(-50%, -50%) scale(0);
+	}
+	99%{
+		opacity: 0;
+		transform: translate(-50%, -50%) scale(9);
+	}
+	100%{
+		opacity: 0;
+		transform: translate(-50%, -50%) scale(0);
+	}
+}
+
+.fake-filter-holder{
+	&.fixed, &.hold-it{
+		bottom auto
+		position fixed
+		top 115px
+		transition all .5s ease-in-out
+		width 255px
+		@media (max-width: 1199px){
+			width 210px
+		}
+		@media (max-width: 767px){
+			width 100%
+		}
+	}
+	&.fixed{
+		top 115px
+		@media (max-width: 1024px){
+			top 67px
+		}
+		@media (max-width: 767px){
+			position relative
+			top 0
+		}
+	}
+	&.hold-it{
+		bottom 30px
+		top auto
+		position absolute
+	}
+}
+
+.send-to-email{
+	span.intel-text{
+		font-family $t-light
+		font-size 12px
+		color $c-gray
+		display block
+		margin-top 10px
+	}
+	.custom-control{
+		label{
+			color $c-gray
+			font-size 13px
+			&:after, &:before{
+				position-select(-1.5rem,50%)
+				transform translateY(-50%)
+			}
+		}
+	}
+	.input-group{
+		margin-bottom 10px
+		input{
+			flex-container(center, row, flex-start)
+			box-shadow none !important
+			font-family $t
+			font-size 14px
+			height 35px
+			outline none !important
+			padding 1px .75rem 0
+			&:active, &:focus{
+				border 1px solid $c-red
+			}
+		}
+		.input-group-append{
+			a{
+				flex-container()
+				background lighten($c-red, 50%)
+				color darken($c-red, 25%)
+				height 35px
+				font-family $t
+				font-size 13px
+				padding 1px inherit 0
+			}
+		}
+		.input-group-prepend{
+			.input-group-text{
+				background $c-bg-gray
+				font-size 12px
+				height 35px
+			}
+		}
+	}
+}

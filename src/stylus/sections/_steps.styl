@@ -1,0 +1,105 @@
+.section-pasos{
+	@media (max-width: 991px){
+		margin-bottom 50px
+	}
+	h2{
+		color $c-red
+		font-family $t-bold
+		font-size 48px
+		margin-bottom 50px
+		padding-bottom 16px
+		position relative
+		text-align center
+		text-transform uppercase
+		&:after{
+			position-select(50%, 0, absolute, true, false)
+			background $c-red
+			content ""
+			height 3px
+			transform translateX(-50%)
+			width 36px
+		}
+	}
+	h4{
+		color $c-gray
+		font-family $t-bold
+		font-size 18px
+		margin 0 0 25px 0
+		text-align center
+		text-transform uppercase
+	}
+	.square-step{
+		.step-holder{
+			flex-container(center, column, flex-start)
+			background $c-white
+			box-shadow 3px 3px 13px 0 rgba(0, 0, 0, 0.25)
+			height 218px
+			padding 28px
+			img{
+				object-fit contain
+				height 140px
+				transform scale(1)
+				transition all .25s ease-in-out
+				width auto
+			}
+			.step-title{
+				color $c-gray
+				font-family $t-light
+				font-size 22px
+				letter-spacing 9.24px
+				margin-bottom 8px
+				padding-top 10px
+				position relative
+				text-align center
+				text-transform uppercase
+				&:before{
+					position-select(50%,0)
+					background $c-red
+					content ""
+					height 3px
+					transform translateX(-50%)
+					width 100px
+				}
+			}
+		}
+		.step-number{
+			flex-container()
+			background $c-red
+			border-radius 50%
+			color $c-white
+			font-family $t-bold
+			font-size 30px
+			height 61px
+			margin 30px auto 80px
+			width 61px
+			@media (max-width: 991px){
+				margin 30px auto
+			}
+		}
+		&:nth-child(2){
+			img{
+				transform scale(1.2)
+			}
+		}
+		&:nth-child(3){
+			img{
+				transform scale(.7)
+			}
+		}
+		&:hover{
+			img{
+				transform scale(1.25)
+			}
+			&:nth-child(2){
+				img{
+					transform scale(1.45)
+				}
+			}
+			&:nth-child(3){
+				img{
+					transform scale(.95)
+				}
+			}
+		}
+	}
+}

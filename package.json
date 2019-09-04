@@ -1,0 +1,59 @@
+{
+    "name": "user-app",
+    "version": "1.0.0",
+    "description": "Login de usuarios con validación de poliza e información relativa del usuario.",
+    "main": "app.js",
+    "scripts": {
+        "dev": "nodemon app.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mexico-asistencia/user-app.git"
+    },
+    "keywords": [
+        "Nodejs",
+        "Pug",
+        "Express",
+        "JS",
+        "MongoDB"
+    ],
+    "author": "@mexico-asistencia",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/mexico-asistencia/user-app/issues"
+    },
+    "homepage": "https://github.com/mexico-asistencia/user-app#readme",
+    "devDependencies": {
+        "@babel/core": "^7.5.5",
+        "@babel/preset-env": "^7.5.5",
+        "bootstrap": "^4.3.1",
+        "gulp": "^4.0.2",
+        "gulp-autoprefixer": "^6.1.0",
+        "gulp-babel": "^8.0.0",
+        "gulp-clean-css": "^4.2.0",
+        "gulp-concat": "^2.6.1",
+        "gulp-purgecss": "^1.2.0",
+        "gulp-rename": "^1.4.0",
+        "gulp-sourcemaps": "^2.6.5",
+        "gulp-stylus": "^2.7.0",
+        "gulp-uglify": "^3.0.2",
+        "nodemon": "^1.19.1"
+    },
+    "dependencies": {
+        "bcryptjs": "^2.4.3",
+        "body-parser": "^1.19.0",
+        "connect-flash": "^0.1.1",
+        "dotenv": "^8.0.0",
+        "express": "^4.17.1",
+        "express-session": "^1.16.2",
+        "express-validator": "^6.1.1",
+        "moment": "^2.24.0",
+        "mongoose": "^5.6.8",
+        "morgan": "^1.9.1",
+        "notyf": "^3.0.4",
+        "passport": "^0.4.0",
+        "passport-local": "^1.0.0",
+        "pug": "^2.0.4",
+        "serve-favicon": "^2.5.0"
+    }
+}

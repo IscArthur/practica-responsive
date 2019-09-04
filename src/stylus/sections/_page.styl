@@ -1,0 +1,161 @@
+.page-content{
+	background $c-white
+	min-height 90vh
+	padding-top 160px
+	@media (max-width: 1024px){
+		padding-top 100px
+	}
+	h1{
+		color $c-red
+		font-family $t-bold
+		font-size 48px
+		margin-bottom 40px
+		position relative
+		text-align center
+		text-transform uppercase
+		&:after{
+			position-select(50%, 0, absolute, true, false)
+			background $c-red
+			content ''
+			height 3px
+			transform translate(-50%, 0)
+			width 36px
+		}
+		@media (max-width: 767px){
+			font-size 38px
+			// &:after{
+			// 	bottom -10px
+			// }
+		}
+		@media (max-width: 540px){
+			font-size 18px
+			margin-bottom 20px
+			// &:after{
+			// 	bottom 0
+			// }
+		}
+	}
+	.post-item{
+		flex-container(stretch, row, center, wrap)
+		background $c-white
+		height auto
+		margin-bottom 20px
+		padding-bottom 15px
+		padding-top 15px
+		text-decoration none !important
+		transition all .25s ease
+		&:last-child{
+			margin-bottom 50px
+		}
+		a.thumbnail{
+			display block
+			margin-right 32px
+			overflow hidden
+			width calc( 50% - 32px )
+			.thumbnail{
+				background-size cover !important
+				height 241px
+				width 100%
+			}
+			@media (max-width: 991px){
+				margin-right 0
+				width 100%
+			}
+		}
+		.intel{
+			flex-container(flex-start, column, flex-start, wrap)
+			position relative
+			overflow hidden
+			width 50%
+			.intel-user{
+				flex-container(flex-start, column, flex-start)
+				width 85%
+				.user-data{
+					flex-container(center, row, flex-start)
+					img{
+						height 25px
+						margin-right 8px
+						width 25px
+					}
+					p{
+						color $c-gray
+						font-family $t-bold
+						font-size 14px
+						margin 0
+						text-transform capitalize
+					}
+				}
+			}
+			.date{
+				color $c-gray
+				font-family $t-light
+				font-size 12px
+				margin 0
+				padding-left 33px
+			}
+			.item-title{
+				color $c-gray
+				font-family $t-medium
+				font-size 20px
+				margin 8px 0 0
+				text-align left
+				text-transform uppercase
+				width 100%
+				a{
+					color $c-gray
+					text-decoration none
+				}
+			}
+			.footer{
+				flex-container(center, row, flex-start)
+				border-top 2px solid rgba($c-gray, .15)
+				padding 15px 0 10px
+				width 100%
+				.icon-holder{
+					flex-container()
+					p{
+						font-family $t-light
+						font-size 13px
+						margin 0 7px 0 0
+					}
+					svg{
+						fill $c-gray
+						height 15px
+						width auto
+					}
+					&.views{
+						margin-right 20px
+						svg{
+							opacity .6
+						}
+					}
+				}
+			}
+			.excerpt-link{
+				color $c-gray
+				text-decoration none
+				width 100%
+			}
+			.excerpt{
+				margin 0
+			}
+			.share{
+				background url(../assets/icons/share.svg) no-repeat center center
+				background-size contain
+				cursor pointer
+				height 20px
+				width 15%
+			}
+			@media (max-width: 991px){
+				padding 20px
+				width 100%
+				.excerpt-link{
+					margin-bottom 10px
+				}
+				.item-title{
+					margin 20px 0 10px
+				}
+			}
+		}
+	}
+}

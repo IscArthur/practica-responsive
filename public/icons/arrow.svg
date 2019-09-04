@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="17.926" height="11.253" viewBox="0 0 17.926 11.253">
+    <defs>
+        <style>
+            .cls-1{fill:#da291c;stroke:rgba(0,0,0,0)}
+        </style>
+    </defs>
+    <path id="botón_de_retroceso" d="M16.329 2.73a1.593 1.593 0 0 0 0-2.265 1.612 1.612 0 0 0-2.265 0L8.4 6.127 2.73.465A1.6 1.6 0 0 0 .465 2.73L7.27 9.535a1.612 1.612 0 0 0 2.265 0z" class="cls-1" data-name="botón de retroceso" transform="translate(.625 .626)"/>
+</svg>

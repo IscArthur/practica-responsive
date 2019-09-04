@@ -1,0 +1,142 @@
+.map-container{
+	background $c-bg-gray
+	margin-bottom 70px
+	min-height 500px
+	padding 35px 35px 20px
+	position relative
+	text-transform uppercase
+	width 100%
+	h2{
+		color $c-red
+		font-family $t-medium
+		font-size 30px
+	}
+	h3{
+		color $c-red
+		font-family $t-medium
+		font-size 16px
+		margin 0
+		text-align center
+	}
+	p{
+		color $c-gray
+		font-family $t-light
+		font-size 18px
+		margin-top 30px
+		text-transform capitalize
+	}
+	#mapper{
+		background darken($c-bg-gray, 5%)
+		height 400px
+		margin-bottom 33px
+		position relative
+		width 100%
+		&:after{
+			position-select(50%, -20px, absolute, true, false)
+			background $c-red
+			content ""
+			height 3px
+			transform translate(-50%, 0)
+			width 60px
+		}
+	}
+	&:after{
+		position-select(-30px, 0, absolute, false, true)
+		border-bottom 30px solid transparent
+		border-left 30px solid $c-red
+		border-top 30px solid transparent
+		content ""
+		height 0
+		width 0
+		@media (max-width: 991px){
+			position-select(50%, -43px, absolute, true, false)
+			right auto
+			top auto
+			transform translateX(-50%) rotate(90deg)
+		}
+	}
+}
+.form-container{
+	height auto
+	margin-bottom 100px
+	padding 15px (35px + 30px)
+	width 100%
+	.socials-holder{
+		flex-container()
+		margin-bottom 50px
+		a{
+			margin-right 30px
+			svg{
+				height 30px
+				width auto
+			}
+			.cls-1{
+				fill $c-red
+				transition fill .15s ease-in-out
+			}
+			&:hover{
+				.cls-1{
+					fill $c-black
+				}
+			}
+			&:last-child{
+				margin-right 0
+			}
+			&.face{
+				svg{
+					height 28px
+				}
+			}
+			&.twit{
+				svg{
+					height 25px
+				}
+			}
+		}
+	}
+	.the-form{
+		margin-top 60px
+		.button-holder{
+			flex-container()
+			height 88px
+			width 100%
+			button{
+				background $c-red
+				border-radius 30px
+				color $c-white
+				font-family $t-medium
+				height 44px
+				line-height 1.1
+				margin 0
+				width 160px
+				&:hover{
+					background darken($c-red, 20%)
+				}
+			}
+		}
+		label{
+			color $c-gray
+			font-family $t-medium
+			font-size 14px
+			line-height 1.1
+			text-transform uppercase
+		}
+		input, textarea{
+			background $c-bg-gray
+			border 1px solid $c-bg-gray
+			border-radius 0
+			box-shadow none
+			font-family $t
+			font-size 16px
+			&:focus, &:active{
+				border 1px solid $c-red
+			}
+		}
+		textarea{
+			height 180px
+		}
+		.form-group{
+			margin-bottom 10px !important
+		}
+	}
+}

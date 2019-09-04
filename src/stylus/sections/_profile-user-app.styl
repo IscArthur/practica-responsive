@@ -1,0 +1,421 @@
+.profile-section{
+	.user-menu{
+		border-right 2px solid $c-gray-light
+		min-height calc(100vh - 90px)
+		padding 0 !important
+		.data-user{
+			flex-container(center, column, flex-end)
+			height 96*3.5px
+			position relative
+			overflow hidden
+			h1{
+				color darken($c-red, 5%)
+				font-family $t-bold
+				font-size 25px
+				margin 15px 0 5px
+				overflow hidden
+				position relative
+				text-align center
+				text-transform uppercase
+				text-overflow ellipsis
+				white-space nowrap
+				max-width 240px
+				width 100%
+				z-index 2
+			}
+			p{
+				margin 0 0 10px
+				text-align center
+				width 320px
+			}
+			.background-img{
+				position-select(50%, 50%)
+				background-size 250% !important
+				filter blur(18px)
+				height 150%
+				opacity .5
+				transform translate(-50%, -50%)
+				width 150%
+				z-index 1
+			}
+			.img-holder{
+				flex-container()
+				position relative
+				img{
+					border-radius 50%
+					height 180px
+					object-fit cover
+					position relative
+					width 180px
+					z-index 2
+				}
+				#edit{
+					flex-container()
+					position-select(10px,10px,absolute,false, false)
+					background $c-red
+					border-radius 50%
+					box-shadow 0 10px 15px -5px rgba($c-black, .25)
+					height 40px
+					padding 10px
+					width 40px
+					z-index 10
+					img{
+						height 30px
+						width auto
+					}
+				}
+			}
+		}
+		.user-menu-list{
+			background lighten($c-gray-light, 75%)
+			list-style-type none
+			padding 0
+			li{
+				border-bottom 1px solid $c-gray-light
+				width 100%
+				a{
+					color $c-red
+					display block
+					font-family $t
+					font-size 20px
+					padding 20px 10px
+					text-align center
+					text-decoration none
+					text-transform uppercase
+					width 100%
+				}
+				&:hover, &.active{
+					a{
+						color $c-white
+						background $c-red
+					}
+				}
+			}
+		}
+		@media (max-width: 767px){
+			min-height auto
+			shadow-like-menu($right){
+				if $right {
+					position-select(-12px,0,absolute,false,false)
+					box-shadow -10px 0 20px rgba($c-gray, .5)
+				} else {
+					position-select(-10px,0,absolute,true,false)
+					box-shadow 10px 0 20px rgba($c-gray, .75)
+				}
+				background transparent
+				content ""
+				height 80px
+				opacity 0
+				pointer-events none
+				transition opacity .15s ease-in-out
+				width 10px
+				z-index 10
+			}
+			&:before{
+				shadow-like-menu(false)
+			}
+			&:after{
+				shadow-like-menu(true)
+			}
+			&.left-shadow{
+				&:before{
+					opacity 1 !important
+				}
+			}
+			&.right-shadow{
+				&:after{
+					opacity 1 !important
+				}
+			}
+			.user-menu-list{
+				flex-container(center, row, flex-start)
+				background $c-gray-light
+				height 80px
+				margin-bottom 0
+				overflow-y hidden
+				overflow-x scroll
+				position relative
+				width 100%
+				li{
+					min-width 60%
+					a{
+						flex-container()
+						border-bottom 2px solid transparent
+						border-right 1px solid $c-white
+						font-size 16px
+						height 80px
+					}
+					&:last-child{
+						a{
+							border-right none
+						}
+					}
+					&:hover, &.active{
+						a{
+							background rgba($c-red, 0)
+							border-bottom 2px solid $c-red
+							color $c-red
+						}
+					}
+					&.active{
+						a{
+							background rgba($c-red, .05)
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.user-data-intel{
+	padding-bottom 50px
+	.container{
+		.row{
+			hr{
+				margin 5px 0 20px
+				&.fake-hr{
+					margin 30px 0 10px
+				}
+			}
+			.data-asegurados{
+				margin 0 0
+				.form-buttons-holder{
+					justify-content center
+					margin-top 15px
+					button{
+						margin 0
+					}
+				}
+				.form-group{
+					padding 0
+				}
+				.form-row{
+					flex-container(center, row, space-between)
+					margin 0
+					padding 0
+					.form-group{
+						width 48%
+					}
+					@media (max-width: 767px){
+						flex-container(center, column, flex-start)
+						.form-group{
+							width 100%
+						}
+					}
+				}
+				&.open{
+					max-height 1500px !important
+				}
+				&.can-close{
+					max-height 0px
+					overflow hidden
+					transition all .25s ease-in-out
+				}
+			}
+			.emergency-share{
+				p{
+					font-size 13px
+					line-height 1.2
+					opacity .75
+					padding 0 10px
+					text-align center
+				}
+				@media (max-width: 991px){
+					p{
+						padding 0
+					}
+				}
+			}
+			.history-item{
+				flex-container(flex-start, column, flex-start)
+				max-height 0
+				overflow hidden
+				transition all .25s ease-in-out
+				.holder{
+					flex-container(flex-start, column, flex-start)
+					border-bottom 1px solid $c-gray-light
+					margin 15px 0
+					padding 0 20px 15px
+					width 100%
+					p{
+						color $c-gray
+						font-family $t-bold
+						height auto !important
+						margin 0
+						&.content{
+							font-family $t
+						}
+					}
+				}
+				.print-view-send{
+					flex-container(center, row, flex-end)
+					width 100%
+					a{
+						margin-left 20px
+					}
+					img{
+						height 30px
+						width auto
+					}
+				}
+				&.open{
+					max-height 1500px
+				}
+			}
+			.pdf{
+				flex-container(center, row, flex-start)
+				height 69px
+				margin-bottom 20px
+				a{
+					background rgba(#e9ecef, .5)
+					border 2px dashed rgba(#aeaeae, .5)
+					padding 20px
+					text-decoration none
+					span{
+						color #aeaeae
+					}
+					svg{
+						fill #aeaeae
+					}
+					&:hover{
+						background rgba(#e9ecef, 1)
+						border 2px dashed rgba(#aeaeae, 1)
+						span{
+							color $c-black
+						}
+						svg{
+							fill $c-black
+						}
+					}
+					@media (max-width: 991px){
+						text-align center
+						width 100%
+					}
+				}
+			}
+			.sos-btn{
+				margin-bottom 10px
+				a{
+					flex-container()
+					background $c-yellow
+					border 1px solid $c-black
+					color $c-black
+					font-family $t-bold
+					padding 10px 0
+					text-decoration none
+					width 100%
+					svg, img{
+						margin-right 10px
+					}
+					&:hover{
+						background darken($c-yellow, 15%)
+					}
+				}
+			}
+			.myassist-btn{
+				margin-bottom 10px
+				a{
+					flex-container()
+					background lighten(orange, 15%)
+					border 1px solid $c-black
+					color $c-black
+					font-family $t-bold
+					padding 10px 0
+					text-decoration none
+					width 100%
+					p{
+						margin 0
+					}
+					svg{
+						height 25px
+						margin-right 10px
+						width auto
+					}
+					&:hover{
+						background orange
+					}
+				}
+			}
+			.title{
+				flex-container(center, row, flex-start)
+				position relative
+				margin-top 70px
+				&.small-margin{
+					margin-top 35px
+				}
+				&.can-close-object{
+					cursor pointer
+					svg{
+						position-select(10px, 50%, absolute, false)
+						fill $c-red
+						height auto
+						transform translateY(-50%) rotate(0)
+						transition transform .15s ease-in-out
+						width 50px
+					}
+					&.open{
+						svg{
+							transform translateY(-50%) rotate(180deg)
+						}
+					}
+					@media (max-width: 767px){
+						svg{
+							right 0
+							transform translateY(-60%) rotate(0)
+							width 30px
+						}
+						&.open{
+							svg{
+								transform translateY(-60%) rotate(180deg)
+							}
+						}
+					}
+				}
+				h2{
+					color $c-gray
+					font-family $t
+					font-size 24px
+					margin 0
+				}
+				h3{
+					flex-container(center, row, flex-start)
+					color lighten($c-gray, 25%)
+					font-family $t
+					font-size 18px
+					margin 0
+					span{
+						color $c-red
+						font-family $t-bold
+						font-size 13px
+						margin-left 20px
+						text-transform uppercase
+						&.active{
+							color $c-green
+						}
+						@media (max-width: 767px){
+							margin-left 10px
+						}
+					}
+				}
+				img{
+					position-select(-44px, inherit)
+					height 28px
+					width auto
+				}
+				@media (max-width: 991px){
+					margin-bottom 10px
+					margin-top 35px !important
+					h2{
+						font-size 20px
+					}
+					img{
+						left 0
+						margin-right 20px
+						position relative
+					}
+				}
+			}
+		}
+	}
+}

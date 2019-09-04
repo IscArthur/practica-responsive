@@ -1,0 +1,71 @@
+.section-segurviajes{
+	height 520px
+	margin-bottom 70px
+	// margin-top -64px
+	margin-top 16px
+	position relative
+	@media (max-width: 767px){
+		margin-top -64px
+	}
+	article{
+		position-select(0,0)
+		height calc(100% + 70px)
+		width 100%
+		&:before{
+			position-select(0,0)
+			background $c-red
+			content ""
+			height 100%
+			opacity .9
+			width 100%
+			z-index 1
+		}
+		h2{
+			color $c-white
+			font-family $t-bold
+			font-size 48px
+			margin-top 57px * 2
+			margin-bottom 67px
+			position relative
+			text-align center
+			z-index 2
+			&:before{
+				position-select(50%, -17px, absolute, true, false)
+				background $c-white
+				content ""
+				height 3px
+				transform translateX(-50%)
+				width 36px
+			}
+		}
+		.the-content{
+			position relative
+			text-align center
+			z-index 2
+			h3{
+				color $c-white
+				font-family $t-bold
+				font-size 18px
+			}
+			p{
+				color $c-white
+				font-family $t-light
+				font-size 16px
+				strong{
+					font-family $t-bold
+				}
+			}
+		}
+	}
+	@media (max-width: 991px){
+		height auto
+		margin-bottom 0
+		article{
+			padding-bottom 57px
+			position relative
+		}
+		h2{
+			margin-top 57px !important
+		}
+	}
+}

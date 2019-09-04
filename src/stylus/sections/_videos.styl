@@ -1,0 +1,131 @@
+.section-videos{
+	margin-bottom 60px
+	padding 0
+	position relative
+	overflow hidden !important
+	width 100vw
+	@media (max-width: 1024px){
+		margin-bottom 60px
+	}
+	@media (max-width: 767px){
+		margin-bottom 20px
+		.gallery-thumbs{
+			display none
+		}
+	}
+	.gallery-thumbs{
+		overflow hidden
+		padding 0 30px
+		height 370px
+		.swiper-slide{
+			p{
+				color $c-gray
+				font-family $t-light
+				font-size 10px
+				padding 0 20px
+				text-align center
+				width 100%
+				@media (max-width: 1024px){
+					display none
+				}
+			}
+			.the-img{
+				background-size 150% !important
+				height 250px
+				position relative
+				width 100%
+				&:before{
+					position-select(0,0)
+					background rgba($c-video, .5)
+					content ""
+					height 100%
+					width 100%
+					z-index 1
+				}
+			}
+			.the-titles{
+				flex-container(center, row, center)
+				margin-top 20px
+				padding 0 20px
+				h3{
+					font-family $t-medium
+					font-size 14px
+					margin 0
+				}
+				h4{
+					color $c-gray
+					font-family $t-bold
+					font-size 16px
+					margin 0
+				}
+				span{
+					color $c-gray
+					margin 0 20px
+				}
+				@media (max-width: 1024px){
+					display none
+				}
+			}
+			&.swiper-slide-thumb-active{
+				.the-img{
+					border 2px solid $c-black
+					&:before{
+						background rgba($c-black, .25)
+					}
+				}
+			}
+		}
+	}
+	.gallery-top{
+		height 400px
+		overflow hidden
+		padding 30px 30px
+		position relative
+		width 100%
+		@media (max-width: 767px){
+			overflow-x hidden
+		}
+		.swiper-pagination-videos{
+			flex-container()
+			position-select(0, 0, absolute, true, false)
+			.swiper-pagination-bullet-active{
+				background $c-red
+			}
+		}
+		.swiper-slide{
+			background-size cover !important
+			cursor pointer
+			position relative
+			&:before{
+				position-select(0,0)
+				background rgba($c-video, .9)
+				content ""
+				height 100%
+				width 100%
+			}
+			h2{
+				position-select(50%, 20px, absolute, true, false)
+				color $c-red
+				font-family $t-bold
+				font-size 30px
+				// position relative
+				transform: translate(-50%, -50%)
+				z-index 2
+			}
+			svg{
+				position-select(50%)
+				fill $c-red
+				height 70px
+				transform translate(-50%, -50%)
+				transition transform .1s ease-in-out
+				width auto
+				z-index 2
+			}
+			&:hover{
+				svg{
+					transform translate(-50%, -50%) scale(1.25)
+				}
+			}
+		}
+	}
+}

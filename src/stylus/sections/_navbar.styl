@@ -1,0 +1,298 @@
+.main-navbar {
+	align-items center
+	background transparent
+	height 110px
+	justify-content center
+	transition background .25s ease-in-out
+	@media (max-width: 1024px){
+		height 60px
+	}
+	.container{
+		position relative
+		left auto
+		justify-content center
+		top auto
+		.navbar-brand{
+			margin-right 65px
+			img{
+				height auto
+				width 196px
+			}
+			@media (max-width: 1024px){
+				position-select(50%,50%)
+				transform translate(-50%,-50%) scale(.5)
+			}
+		}
+		.responsive-header-menu,
+		.open-close-menu{
+			display none
+		}
+		.menu-list{
+			flex-container(flex-end, row, flex-start)
+			height 110px
+			list-style none
+			margin -20px 15px 0 0
+			padding 0
+			li{
+				height 40px
+				margin-right 9px
+				a{
+					border-top 2px solid $c-white
+					color $c-white
+					display block
+					font-family $t-light
+					font-size 14px
+					height 100%
+					padding 9px 8px 0
+					position relative
+					text-align center
+					text-decoration none
+					&:before{
+						position-select(50%,-2px)
+						background $c-red
+						content ""
+						height 3px
+						opacity 0
+						transform translateX(-50%)
+						transition all .25s ease
+						width 0
+						z-index 1
+					}
+				}
+				&:hover{
+					a:before{
+						opacity 1
+						width 100%
+					}
+				}
+				&.current-menu-item, &.current_page_item{
+					a{
+						font-family $t-medium
+						&:before{
+							opacity 1
+							width 100%
+						}
+					}
+				}
+			}
+		}
+		.right-side-menu{
+			flex-container(flex-start, column, center)
+			height 100%
+			position relative
+			.social-holder{
+				flex-container()
+				margin-bottom 5px
+				a{
+					margin-right 10px
+					transform scale(.9)
+					svg, .cls-1{
+						fill $c-white
+						transition all .25s ease
+					}
+					&:first-child{
+						margin-left 25px
+						margin-right 15px
+					}
+					&:hover{
+						svg, .cls-1{
+							fill $c-red
+						}
+					}
+					&:last-child{
+						margin-right 0
+						transform scale(.6)
+						svg, .cls-1{
+							fill $c-red
+						}
+						&:hover{
+							svg, .cls-1{
+								fill $c-white
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&.scrolled{
+		background rgba($c-black, .9)
+		&:hover{
+			background rgba($c-black, 1)
+		}
+	}
+	@media (max-width: 1024px){
+		.nav-container{
+			flex-container(center, row, flex-start)
+		}
+		.navbar-brand{
+			margin-right 30px !important
+		}
+		.responsive-header-menu{
+			flex-container()
+			position-select(0,0,fixed)
+			border-bottom 1px solid $c-black
+			display flex !important
+			height 180px
+			opacity 0
+			padding-top 10px
+			transform translateX(-100%)
+			transition all .25s ease-in-out
+			width calc(90vw - 15px)
+			z-index 10
+			img{
+				margin-left -10px
+				transform scale(.85)
+			}
+			.close-menu{
+				position-select(50%, 15px)
+				transform translateX(-50%)
+				svg{
+					fill $c-white
+					height 30px
+					width auto
+				}
+			}
+			&.active{
+				opacity 1
+				transform translateX(0)
+			}
+		}
+		.open-close-menu{
+			display block !important
+			width 100%
+			svg{
+				cursor pointer
+				fill $c-white
+				transform scale(.85)
+			}
+		}
+		.menu-list{
+			flex-container(center !important, column !important, center !important)
+			my-shadow(0, 20px, 15px, 0, $c-black, .25)
+			position-select(0,20px,fixed,true,true)
+			background $c-red
+			height 100vh !important
+			opacity 0
+			transform translateX(-100%)
+			transition all .25s ease-in-out
+			width calc(90vw - 15px)
+			li{
+				margin-right 0 !important
+				a{
+					border-top none !important
+					font-family $t-bold !important
+					font-size 20px
+					transition color .15s ease
+					&:before{
+						display none
+					}
+					&:hover{
+						color $c-black
+					}
+				}
+				&:first-child{
+					margin-top 100px
+				}
+			}
+			&.close{
+				opacity 1
+				transform translateX(-100%)
+			}
+			&.active{
+				opacity 1
+				transform translateX(0)
+			}
+		}
+		.right-side-menu{
+			position-select(0,0,fixed,true,false)
+			align-items center !important
+			height 60px !important
+			justify-content center
+			opacity 0
+			transform translateX(-100%)
+			transition all .25s ease-in-out
+			position fixed !important
+			width calc(90vw - 15px)
+			.cotizar{
+				display none
+			}
+			.social-holder{
+				margin-bottom 0
+				a{
+					margin-left 0 !important
+					&:last-child{
+						svg, .cls-1{
+							fill $c-white !important
+						}
+					}
+				}
+			}
+			&.active{
+				opacity 1
+				transform translateX(0)
+			}
+		}
+	}
+	&.white-menu{
+		background $c-white
+		border-bottom 2px solid $c-gray-light
+		.menu-list{
+			li{
+				a{
+					border-top 2px solid $c-gray
+					color $c-gray
+				}
+			}
+		}
+		.right-side-menu{
+			.social-holder{
+				a{
+					svg, .cls-1{
+						fill $c-gray
+					}
+					&:last-child{
+						&:hover{
+							svg, .cls-1{
+								fill $c-gray
+							}
+						}
+					}
+				}
+			}
+		}
+		&.scrolled{
+			my-shadow()
+		}
+		@media (max-width: 1024px){
+			.open-close-menu{
+				svg{
+					fill $c-red
+				}
+			}
+			.menu-list{
+				li{
+					a{
+						color $c-white
+					}
+				}
+			}
+			.right-side-menu{
+				.social-holder{
+					a{
+						svg, .cls-1{
+							fill $c-white
+						}
+						&:last-child{
+							&:hover{
+								svg, .cls-1{
+									fill $c-white
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

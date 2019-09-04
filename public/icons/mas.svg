@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20.107" viewBox="0 0 20 20.107">
+    <defs>
+        <style>
+            .cls-1{fill:#d92a1c}
+        </style>
+    </defs>
+    <g id="mas" transform="translate(.001)">
+        <path id="Unión_22" d="M0 10.053a10 10 0 1 1 10 10.054A10.039 10.039 0 0 1 0 10.053zm.77 0A9.231 9.231 0 1 0 10 .774a9.267 9.267 0 0 0-9.23 9.279zm8.846 5.027v-4.64H5.193a.387.387 0 0 1 0-.773h4.422V5.413a.385.385 0 1 1 .77 0v4.254h4.422a.387.387 0 0 1 0 .773h-4.422v4.641a.385.385 0 1 1-.77 0z" class="cls-1" data-name="Unión 22" transform="translate(-.001)"/>
+    </g>
+</svg>

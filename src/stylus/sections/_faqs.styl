@@ -1,0 +1,41 @@
+.faq-item{
+	border-bottom 2px solid rgba($c-gray, .1)
+	cursor pointer
+	transition all .5s ease-in-out
+	.answer{
+		height auto
+		margin 0
+		max-height 0
+		overflow hidden
+		padding-bottom 0
+		transition all .5s ease-in-out
+	}
+	.item-title{
+		flex-container(center, row, space-between)
+		h2{
+			color $c-red
+			font-family $t-medium
+			font-size 20px
+			line-height 1.2
+			margin 0
+			padding 35px 0
+			text-transform uppercase
+			max-width 90%
+		}
+	}
+	&:hover{
+		background rgba($c-gray, .025)
+	}
+	&:last-child{
+		margin-bottom 125px
+	}
+	&.active{
+		.answer{
+			max-height 1500px
+			padding-bottom 35px
+		}
+		&:hover{
+			background $c-white
+		}
+	}
+}

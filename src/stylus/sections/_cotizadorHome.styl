@@ -1,0 +1,621 @@
+.cotizador{
+	margin-top -10px
+	height 64px
+	position relative
+	transform translateY(-50%)
+	width 1140px
+	z-index 10
+	@media (max-width: 1199px){
+		width 960px !important
+	}
+	@media (max-width: 991px){
+		width 100% !important
+	}
+	.cotizador-responsive{
+		flex-container(center, column, flex-start)
+		my-shadow(0,15px,20px,-10px,$c-black,0.25)
+		background $c-white !important
+		height 64px
+		padding 0
+		.first-look{
+			flex-container()
+			background $c-white
+			height 64px
+			position relative
+			width 100%
+			z-index 1
+			.fake-button{
+				height 64px
+				border-radius 0
+				width 50%
+				&:hover, &:focus{
+					background $c-red
+				}
+			}
+			.input-holder{
+				flex-container()
+				background $c-white
+				height 64px
+				width 50%
+				svg{
+					height 25px
+					transform rotate(0)
+					transition transform .25s ease-in-out
+					width auto
+				}
+			}
+			&.active{
+				my-shadow(0,0,0,0,$c-black,0)
+				.input-holder{
+					svg{
+						transform rotate(90deg)
+					}
+				}
+			}
+		}
+		.second-look{
+			my-shadow(0,20px,20px,10px,$c-black,0.15)
+			opacity 0
+			pointer-events none
+			position relative
+			transform translateY(-100px)
+			transition all .25s ease-in-out
+			z-index 1
+			&.active{
+				opacity 1
+				pointer-events auto
+				transform translateY(0)
+			}
+			.button-holder{
+				flex-container()
+				margin-top 1px
+				width 300px
+				button{
+					border-radius 0
+					height 64px
+					width 300px
+				}
+			}
+			.dates-holder{
+				flex-container()
+				margin 1px 0
+				height 64px
+				width 300px
+				.input-holder{
+					flex-container(center, column, center)
+					border-radius 0
+					height 64px
+					position relative
+					width 100%
+					label{
+						flex-container(center, row, flex-start)
+						position-select(50%,50%)
+						padding-left 20px
+						transform translate(-50%, -50%)
+						transition all .25s ease
+						width 100%
+						p{
+							color $c-red
+							font-family $t-book
+							font-size 13px
+							margin 0 0 0 10px
+						}
+					}
+					input{
+						border none
+						border-radius 0
+						box-shadow none !important
+						height 64px
+						outline none !important
+						padding 25px 0 0 50px
+						text-align left
+					}
+					&.active{
+						label{
+							transform translate(-50%, -100%) scale(.9)
+						}
+					}
+				}
+			}
+			.descuento{
+				flex-container(center, column, center)
+				background $c-white
+				height 94px
+				margin-top 1px
+				max-width 300px
+				width 300px
+				.icon{
+					flex-container()
+					p{
+						color $c-red
+						font-size 14px
+						margin 0 0 0 10px
+					}
+				}
+				.input-holder{
+					height auto
+					margin 0
+					input{
+						border none
+						border-bottom 1px solid $c-red
+						box-shadow none !important
+						color $c-red
+						font-family $t-medium
+						font-size 15px
+						height auto
+						outline none !important
+						text-align center
+						&:focus, &:active{
+							border-bottom 1px solid $c-black
+						}
+					}
+				}
+			}
+			.pasajeros{
+				max-width 300px
+				width 300px
+				.icon{
+					flex-container()
+					background $c-white
+					height 64px
+					p{
+						color $c-red
+						font-size 14px
+						margin 0 0 0 10px
+					}
+				}
+				.subpart{
+					.input-holder{
+						flex-container(center, column, center)
+						background $c-white
+						height 64px
+						margin-top 1px
+						span{
+							color $c-red
+							font-size 13px
+							line-height 1
+							margin 0
+							&.age{
+								font-size 10px
+							}
+						}
+						.the-input{
+							flex-container(center, row, space-between)
+							button{
+								flex-container()
+								background transparent
+								border 0
+								box-shadow 0 !important
+								outline none !important
+								transform scale(1)
+								transition all .15s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+								width 100%
+								&:hover{
+									transform scale(1.25)
+								}
+								&:active{
+									transform scale(.9)
+								}
+							}
+							input{
+								border none
+								box-shadow none !important
+								margin 0 10px
+								outline none !important
+								padding-left 10px
+								text-align center
+								width 120px
+							}
+						}
+					}
+				}
+			}
+			.select-holder{
+				flex-container()
+				background pink
+				height 64px
+				margin-bottom 1px
+				position relative
+				width 300px
+				label{
+					position-select(20px, 50%)
+					transform translate(0,-50%)
+				}
+				select{
+					background $c-white
+					border none
+					border-radius 0
+					box-shadow none !important
+					color $c-red
+					height 100%
+					font-family $t-light
+					font-size 14px
+					outline none !important
+					padding 10px 0 0 50px
+				}
+				&.wider{
+					select{
+						padding-top 5px
+					}
+				}
+			}
+		}
+	}
+	.cotizador-content{
+		flex-container(flex-start, column, flex-start)
+		my-shadow(0, 15px, 20px, -10px, $c-black, 0.25)
+		background $c-white
+		height 64px
+		overflow hidden
+		padding 0
+		transition height .25s ease-in-out
+		transition-delay .25s
+		.cotizador-first-floor{
+			flex-container(center, row, flex-start)
+			// my-shadow(0, 15px, 20px, -10px, $c-black, 0.25)
+			// background $c-white
+			padding 0
+			min-height 64px
+			height 64px
+			width 100%
+		}
+		.cotizador-second-floor{
+			flex-container(center, row, flex-start)
+			border-top 2px solid $c-gray-light
+			height 0
+			margin 0
+			opacity 0
+			padding 0
+			pointer-events none
+			transition all .25s ease-in-out
+			transition-delay .25s
+			width 100%
+			.half{
+				flex-container(center, row, flex-start)
+				height 100%
+				padding-left 20px
+				position relative
+				width 53%
+				.icon{
+					flex-container(center, row, flex-start)
+					min-width 50%
+					width auto
+					p{
+						color $c-red
+						font-family $t-book
+						font-size 13px
+						margin 0 0 0 10px
+					}
+				}
+				.descuento{
+					input{
+						border none
+						border-bottom 1px solid $c-red
+						box-shadow none !important
+						font-family $t-bold
+						font-size 14px
+						outline none !important
+						text-align center
+					}
+				}
+				.subpart{
+					flex-container(flex-start, row, flex-start)
+					my-shadow(0, 15px, 20px, -10px, $c-black, 0.25)
+					position-select(0, 100%)
+					background $c-white
+					height 84px
+					opacity 0
+					transform translateY(-50%)
+					transition all .25s ease
+					width 100%
+					z-index -1 !important
+					.input-holder{
+						border-right 2px solid $c-gray-light
+						height 84px
+						padding-top 15px
+						width 50%
+						.the-input{
+							flex-container()
+							button{
+								// flex-container()
+								background transparent
+								border none
+								box-shadow none !important
+								cursor pointer
+								height 20px
+								outline none !important
+								position relative
+								transform scale(1)
+								transition all .15s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+								width 30px
+								&:hover{
+									transform scale(1.25)
+								}
+								&:active{
+									transform scale(.9)
+								}
+							}
+							img{
+								position-select(50%,50%)
+								height 20px
+								position relative
+								transform translate(-50%, 0)
+								width auto
+								z-index 1
+							}
+							input{
+								border none
+								box-shadow none !important
+								outline none !important
+								pointer-events none
+								text-align center
+								transform translateX(6px)
+								width 40px
+							}
+						}
+						span{
+							color $c-gray
+							display block
+							font-family $t-book
+							text-align center
+							width 100%
+						}
+						.age{
+							font-size 10px
+						}
+						.type{
+							font-size 12px
+						}
+						&:last-child{
+							border-right none
+						}
+					}
+				}
+				&.active{
+					background $c-red
+					color $c-white
+					input{
+						background $c-red
+						color $c-white
+						border-bottom 1px solid $c-white
+					}
+					.icon{
+						p{
+							color $c-white
+						}
+						svg{
+							.cls-1{
+								fill $c-white
+							}
+						}
+					}
+				}
+				&:first-child{
+					// background $c-red
+					border-right 2px solid $c-gray-light
+					min-width 45%
+					width 47%
+					// .icon{
+					// 	p{
+					// 		color $c-white
+					// 	}
+					// 	svg{
+					// 		fill $c-white
+					// 		.cls-1{
+					// 			fill $c-white
+					// 		}
+					// 	}
+					// }
+				}
+			}
+		}
+		.dates-holder{
+			flex-container()
+			height 100%
+			max-width 250px !important
+			width 250px
+			.input-holder{
+				flex-container(center, column, center)
+				height 100%
+				position relative
+				padding-top 25px
+				width 100%
+				label{
+					flex-container(center, row, center)
+					position-select(50%,50%)
+					transform translate(-50%, -50%)
+					transition all .25s ease
+					width 100%
+					p{
+						color $c-red
+						font-family $t-book
+						font-size 13px
+						margin 0 0 0 10px
+					}
+				}
+				input{
+					border none
+					box-shadow none !important
+					height 100%
+					outline none !important
+					text-align center
+				}
+				&.active{
+					label{
+						transform translate(-50%, -100%) scale(.9)
+					}
+				}
+			}
+			@media (max-width: 767px){
+				display none
+			}
+		}
+		.input-holder{
+			&.button-cotizar{
+				button{
+					border-radius 0
+					height 64px
+					margin 0
+					padding 0
+					width 100px
+				}
+			}
+			&.plus{
+				flex-container()
+				border-left 2px solid $c-gray-light
+				border-right 2px solid $c-white
+				cursor pointer
+				height 100%
+				transition all .25s ease-in-out
+				width 90px
+				@media (max-width: 767px){
+					border-left none
+				}
+				span{
+					color $c-red
+					display block
+					transform scale(1.5)
+					transition all .25s ease-in-out
+					&.icon-regular{
+						display block
+					}
+					&.icon-responsive{
+						display none
+						svg{
+							height 15px
+							width auto
+						}
+					}
+					@media (max-width: 767px){
+						&.icon-regular{
+							display none
+						}
+						&.icon-responsive{
+							display block
+						}
+					}
+				}
+				&.active{
+					background $c-red
+					border-left 2px solid $c-white
+					span{
+						color $c-white
+						transform scale(1.5) rotate(45deg)
+					}
+					@media (max-width: 767px){
+						background $c-white
+						border-left none
+						span{
+							transform scale(1.5) rotate(90deg)
+						}
+						&.icon-regular{
+							display none
+						}
+						&.icon-responsive{
+							svg{
+								.cls-1{
+									fill $c-white !important
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.select-holder{
+			// flex-container(center, row, center)
+			height 64px
+			position relative
+			width 200px
+			&.first{
+				width 150px
+			}
+			&.wider{
+				width 170px
+			}
+			label{
+				flex-container()
+				position-select(13px, 50%)
+				height 100%
+				margin 0
+				transform translateY(-50%)
+				padding 0
+				width 25%
+				svg{
+					fill $c-red
+				}
+			}
+			select{
+				background none !important
+				border none
+				border-radius 0
+				border-right 2px solid $c-gray-light
+				box-shadow none !important
+				color $c-red
+				font-family $t-book
+				font-size 13px
+				padding-left 55px
+				height 100%
+				outline none !important
+				width 100%
+			}
+			@media (max-width: 767px){
+				display none
+			}
+		}
+		&.active{
+			height 128px
+			overflow visible
+			*{
+				pointer-events auto !important
+			}
+			.cotizador-second-floor{
+				height 64px
+				opacity 1
+				.half{
+					.subpart{
+						opacity 1
+						transform translateY(0)
+						transition-delay .75s
+					}
+				}
+			}
+		}
+		&.closing{
+			overflow visible
+		}
+	}
+}
+
+.datepicker--day-name{
+	color $c-black
+	font-weight bold
+}
+.datepicker--cell{
+	&.-current-{
+		color $c-red
+		font-weight bold
+		&.-in-range-{
+			color $c-red
+		}
+	}
+	&.-range-from-{
+		background $c-red !important
+		color $c-white
+	}
+	&.-in-range-{
+		background rgba($c-red, .25)
+	}
+	&.-range-to-{
+		background rgba($c-red, .25)
+		border 1px solid $c-red
+	}
+	&.-selected-{
+		background $c-red !important
+		color $c-white
+	}
+	&.-focus-{
+		background rgba($c-red, .25) !important
+		border 1px solid $c-red
+	}
+}

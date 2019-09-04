@@ -1,0 +1,46 @@
+.section-download{
+	margin-bottom 70px
+	.download-container{
+		flex-container(stretch, row, center)
+		background $c-red
+		.left-side{
+			width 44%
+			img{
+				height auto
+				margin-top 10px
+				width 100%
+			}
+		}
+		.right-side{
+			padding 33px 0
+			width 56%
+			h2{
+				color $c-white
+				font-family $t-light
+				font-size 21px
+				letter-spacing 3.44px
+				line-height 1.2
+				margin 0
+				text-align center
+				text-transform uppercase
+				max-width 340px
+				width 80%
+				strong{
+					font-family $t-bold
+				}
+			}
+			.stores{
+				position-select(100px, 50px, absolute, false, false)
+				flex-container(flex-start, column)
+				img{
+					height 35px
+					width auto
+					&:first-child{
+						transform scale(1.5)
+						margin 0 0 10px 13px
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,118 @@
+.inicio-left{
+	background linear-gradient(to bottom, $c-dblue, rgba($c-mblue, .7))
+	width 100vw
+	height 100vh
+	img {
+		width 42%
+		height 100vh
+		position fixed
+		top 0
+		left 0
+	}
+}
+.inicio-rigth{
+		margin-top 30px
+	span {
+		padding-left 30px
+		color $c-black
+		font-family $t-bold
+		font-size 24px
+	}
+	a {
+		padding-top 5px
+		float right
+		padding-right 20px
+	}
+}
+.contenido-inicio {
+	p {
+		padding-left 30px
+		margin 100px 80px 0
+		font-size 32px
+		color $c-black
+		font-family $t-bold
+	} 
+}
+.contenido-context {
+		p {
+			padding-left 30px
+			margin 30px 80px 0
+			font-size 14px
+			color $c-black
+		}
+}
+.data-sesion {
+		p {
+			padding-left 30px
+			margin 30px 80px 0
+			color $c-black
+			font-family $t-bold
+			font-size 18px
+		}
+		input {
+			margin 30px 110px 0
+			width 280px
+		}
+		button {
+			margin -80px
+			width 140px
+		}
+}
+.data-privacy {
+		a{
+			font-size 11px
+			color $c-black
+			margin 80px 110px 0
+		}
+}
+@media(max-width 480px){
+	.inicio-left { 
+		width 100vw
+		height 50vh
+		img {
+			width 100%
+			height 50vh
+			position fixed
+			top 0
+			left 0
+		}
+	}
+	.data-redes {
+		margin -500px 0 0
+		margin-bottom 500px
+	}
+	.data-redes span {
+		font-size 100%
+		color $c-white
+	}
+	.data-redes a {
+			svg {
+				width 15px
+				height 10px
+				fill $c-white
+			}
+	}
+	.data-sesion {
+		margin 30px -100px 0
+	}
+	.data-sesion p {
+		font-size 12px
+	}
+	.data-sesion button  {
+		margin 30px 110px 0
+	}
+	.data-privacy a {
+		font-size 11px
+		margin 30px -10px 0
+		margin-bottom 20px
+	}
+	.contenido-inicio p {
+		margin 40px -20px 0
+		font-size 100%
+	}
+	.contenido-context p {
+		margin 20px -20px 0
+		font-size 11.5px
+		color $c-gray
+	}
+}

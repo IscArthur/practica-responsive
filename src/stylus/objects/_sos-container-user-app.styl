@@ -1,0 +1,79 @@
+.sos-container{
+	flex-container(center, column, center)
+	position-select(0,0,fixed)
+	background url(/public/img/sos-bg.jpg) no-repeat center center
+	background-size cover
+	height 100vh
+	opacity 0
+	overflow hidden
+	pointer-events none
+	transform translateY(-100px)
+	transition all .25s ease-in-out
+	width 100vw
+	z-index -1
+	h3.sos-title{
+		color $c-red
+		font-family $t-black
+		font-size 30px
+		margin 0
+		position relative
+		z-index 2
+	}
+	p.sos-subtitle{
+		color $c-white
+		font-size 16px
+		margin 0
+		position relative
+		z-index 2
+	}
+	span.sos-bg{
+		position-select(0,0)
+		background rgba($c-black, .5)
+		height 100vh
+		width 100vw
+		z-index 1
+	}
+	.buttons-holder{
+		flex-container(center, column, center)
+		margin-top 20px
+		position relative
+		z-index 2
+		.b-item{
+			flex-container(center, column, center)
+			a{
+				flex-container(center, column, center)
+				text-decoration none
+				p{
+					color $c-white
+				}
+			}
+		}
+	}
+	&.active{
+		opacity 1
+		pointer-events all
+		transform translateY(0)
+		z-index 2000
+	}
+	@media (max-width: 767px){
+		h3.sos-title{
+			font-size 24px
+		}
+		p.sos-subtitle{
+			font-size 13px
+		}
+		.buttons-holder{
+			.b-item{
+				a{
+					img{
+						height 60px
+						width auto
+					}
+					p{
+						font-size 14px
+					}
+				}
+			}
+		}
+	}
+}

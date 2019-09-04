@@ -1,0 +1,39 @@
+btn-form(){
+	flex-container()
+	background $c-red
+	border-radius 50px
+	color $c-white
+	font-family $t-bold
+	font-size 14px
+	height 36px
+	padding-top 8px
+}
+.btn{
+	&.cotizar{
+		btn-form()
+		width 98px
+		&:hover{
+			background darken($c-red, 20%)
+		}
+	}
+	&.fake-btn{
+		background transparent
+		border 2px solid $c-red
+		border-radius 50px
+		color $c-red
+		font-family $t-medium
+		width 90%
+		&:hover{
+			background $c-red
+			color $c-white
+		}
+		@media (max-width: 991px){
+			font-size 14px
+			width 100%
+		}
+	}
+	&.login{
+		btn-form()
+		width 200px
+	}
+}

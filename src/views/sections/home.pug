@@ -1,0 +1,29 @@
+extends ../layout.pug
+
+block content
+	include ../nav.pug
+	+menu(true, false)
+	section.with-padding-top.section-inicio.container
+		.row
+			article.col-12
+				h1.title-inicio Hola Marco Castro
+				.home-user-poliza.col-12.text-center
+					p Póliza: <span class="gray-text"> UVK908567 </span>
+				.col-12.text-center.sos-holder
+					.sos-btn
+						a.triggers-sos(href="#sos")
+							img(src="/public/icons/sos.svg", alt="S.O.S. Alerta")
+							span S.O.S.
+	section.container-fluid.data-inicio
+		.row.justify-content-center
+			a.col-6.col-lg-3.item-data-inicio(href="/perfil", style="background: url(/public/img/dts-poliza-2.png) no-repeat center center;")
+				.bg-gradient
+				h2 DATOS DE<br>MI PÓLIZA
+			a.col-6.col-lg-3.item-data-inicio(href="https://asistenciamx.com/#cotizar", style="background: url(/public/img/dts-plan.png) no-repeat center center;")
+				.bg-gradient
+				h2 COTIZAR<br>NUEVO PLAN
+			a.col-12.col-lg-3.item-data-inicio(href="https://asistenciamx.com/planes/", style="background: url(/public/img/dts-beneficios.png) no-repeat center center;")
+				.bg-gradient
+				h2 MÁS<br>BENEFICIOS
+	//- section.sepatator-benefits
+	include ../footer.pug

@@ -1,0 +1,34 @@
+*{
+	box-sizing border-box
+}
+
+body{
+	background $c-white
+	font-family $t
+	font-size 16px
+	overflow-x hidden
+	width 100vw
+	&.no-scroll{
+		overflow hidden !important
+	}
+	.this-title{
+		@media (max-width: 1024px){
+			font-size 38px !important
+		}
+		@media (max-width: 767px){
+			font-size 28px !important
+		}
+	}
+}
+
+.with-footer{
+	min-height 100vh
+	padding-top 90px
+}
+.with-padding-top{
+	padding-top 90px
+}
+
+.whatsappme {
+	z-index 1100
+}

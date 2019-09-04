@@ -1,0 +1,31 @@
+.section-stats{
+	margin 0
+}
+.single-stat{
+	flex-container(center, column, center)
+	background $c-red
+	color $c-white
+	height 133px
+	h2{
+		font-family $t-bold
+		font-size 45px
+		line-height 1
+		margin 0 0 7px 0
+	}
+	p{
+		font-family $t-medium
+		font-size 14px
+		line-height 1
+		text-transform uppercase
+		margin 0
+	}
+	&:nth-child(2){
+		background lighten($c-red, 20%)
+	}
+	&:nth-child(3){
+		background lighten($c-red, 40%)
+	}
+	&:last-child{
+		background lighten($c-red, 60%)
+	}
+}

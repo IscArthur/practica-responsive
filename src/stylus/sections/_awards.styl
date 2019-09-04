@@ -1,0 +1,44 @@
+.section-reconocimientos{
+	h2{
+		color $c-red
+		font-family $t-bold
+		font-size 48px
+		padding-bottom 15px
+		position relative
+		text-align center
+		text-transform uppercase
+		&:after{
+			position-select(50%, 0, absolute, true, false)
+			background $c-red
+			content ""
+			height 3px
+			transform translateX(-50%)
+			width 36px
+		}
+	}
+	.items-container{
+		flex-container(center, row, space-between, wrap)
+		margin 40px 0 70px
+		@media (max-width: 1024px){
+			justify-content center
+			.img-item{
+				margin-right 20px
+				&:last-child{
+					margin-right 0
+				}
+			}
+		}
+		.img-item{
+			margin-bottom 30px
+			img{
+				height 117px
+				width auto
+			}
+			&:nth-child(4){
+				img{
+					height 75px
+				}
+			}
+		}
+	}
+}

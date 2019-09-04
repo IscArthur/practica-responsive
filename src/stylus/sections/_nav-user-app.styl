@@ -1,0 +1,170 @@
+.app-nav{
+	background $c-white
+	height 90px !important
+	.nav-container{
+		justify-content flex-start !important
+	}
+	.open-close-menu{
+		display block !important
+		width 100%
+		svg{
+			cursor pointer
+			fill $c-red
+		}
+	}
+	.navbar-brand{
+		position-select(50%,50%)
+		transform translate(-50%, -50%)
+	}
+}
+
+remove-weird-margins(){
+	margin-block-start 0 !important
+	margin-block-end 0 !important
+	margin-inline-start 0 !important
+	margin-inline-end 0 !important
+	padding-inline-start 0 !important
+}
+
+#background-menu{
+	position-select(0,0,fixed)
+	background $c-black
+	height 100vh
+	opacity 0
+	pointer-events none
+	transition opacity .25s ease-in-out
+	width 100vw
+	z-index -1
+	&.active{
+		opacity 0
+		pointer-events auto
+		z-index 1040
+	}
+}
+.main-menu-container{
+	position-select(0,0,fixed)
+	flex-container(center, column, flex-end)
+	background $c-red
+	height 100vh
+	overflow-x hidden
+	overflow-y auto
+	pointer-events none
+	// position relative
+	transform translateX(-150%)
+	transition transform .25s ease-in-out
+	width 30vw
+	z-index 1041
+	&.active{
+		pointer-events auto
+		transform translateX(0)
+		transition-delay .25s
+	}
+	#close-menu{
+		position-select(50%, 20px)
+		cursor pointer
+		transform translate(-50%, 0)
+		svg{
+			fill $c-white
+		}
+	}
+	.menu-footer{
+		flex-container(center, column, center)
+		margin-top 15px
+		.social{
+			flex-container(center, column, center)
+			ul{
+				flex-container()
+				remove-weird-margins()
+				list-style-type none
+				margin 5px 0 15px !important
+				li{
+					margin-right 15px
+					&:last-child{
+						margin-right 0
+					}
+					&:hover{
+						opacity .75
+					}
+				}
+			}
+			span{
+				color $c-white
+				font-family $t
+				font-size 12px
+			}
+		}
+		.terms{
+			margin-bottom 15px
+			a{
+				color $c-white
+				text-decoration none
+			}
+		}
+	}
+	.menu-list{
+		remove-weird-margins()
+		list-style-type none
+		width 100%
+		li{
+			a{
+				flex-container()
+				color $c-white
+				padding 14px 0
+				text-decoration none
+				width 100%
+			}
+			&.special-sos{
+				a{
+					background $c-yellow
+					color $c-black
+					font-family $t-bold
+					position relative
+					svg, img{
+						position-select(50%,50%)
+						height 25px
+						transform translate(-210%, -50%)
+						width auto
+					}
+				}
+			}
+			&:hover, &.active{
+				a{
+					background darken($c-red, 25%)
+				}
+				&.special-sos{
+					a{
+						background darken($c-yellow, 30%)
+					}
+				}
+			}
+		}
+	}
+	.user-intel{
+		flex-container(center, column, center)
+		border-bottom 1px solid $c-white
+		width 80%
+		img{
+			height 80px
+			width 80px
+		}
+		p{
+			color $c-white
+			font-family $t-bold
+		}
+	}
+	@media (max-width: 767px){
+		width 75vw
+		#close-menu{
+			top 10px
+		}
+		.menu-footer{
+			margin-top 0
+			.terms{
+				margin-bottom 10px
+				a{
+					font-size 12px
+				}
+			}
+		}
+	}
+}

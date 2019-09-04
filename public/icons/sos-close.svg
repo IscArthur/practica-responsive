@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="66" height="66" viewBox="0 0 66 66">
+    <defs>
+        <style>
+            .cls-1,.cls-2{fill:#fff}.cls-1{opacity:.34}
+        </style>
+    </defs>
+    <g id="Grupo_257" data-name="Grupo 257" transform="translate(-147 -585)">
+        <rect id="Rectángulo_57" width="66" height="66" class="cls-1" data-name="Rectángulo 57" rx="33" transform="translate(147 585)"/>
+        <g id="close" transform="translate(168 606.002)">
+            <path id="Trazado_18" d="M14.724 11.893l8.482-8.482A2 2 0 0 0 20.379.583L11.9 9.065 3.414.583A2 2 0 0 0 .587 3.41l8.482 8.482-8.482 8.483A2 2 0 0 0 3.414 23.2l8.486-8.48 8.479 8.48a2 2 0 1 0 2.827-2.827z" class="cls-2" data-name="Trazado 18"/>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,353 @@
+.section-planes{
+	height auto
+	min-height 222px
+	.container-fluid{
+		position relative
+		transform translateY(-50%)
+		width 1140px
+		z-index 2
+		@media (max-width: 1199px){
+			width 960px !important
+		}
+	}
+	@media (max-width: 991px){
+		.container-fluid{
+			transform translateY(0)
+			width 100% !important
+		}
+	}
+	@media (max-width: 767px){
+		.plan-item{
+			&:nth-child(3){
+				display none
+			}
+		}
+	}
+}
+.plan-item{
+	cursor pointer
+	height 300px
+	@media (max-width: 991px){
+		padding 5px 5px 0 0 !important
+		&:nth-child(3){
+			padding-right 0 !important
+		}
+		&:last-child{
+			padding 5px 0 5px 0 !important
+		}
+	}
+	a{
+		text-decoration none
+	}
+	.item-holder{
+		my-shadow(0, 15px, 20px, -10px, $c-black, 0.25)
+		background-size cover !important
+		height 100%
+		overflow hidden
+		padding 29px 15px
+		position relative
+		transition all .5s ease-in-out
+		width 100%
+		&:before{
+			position-select(0,0)
+			background rgba($c-black, .5)
+			content ""
+			height 100%
+			transition background .25s ease
+			width 100%
+			z-index 1
+		}
+		h3{
+			color $c-white
+			font-family $t-medium
+			font-size 18px
+			position relative
+			margin-bottom 17px
+			max-width 80px
+			z-index 2
+			&:after{
+				position-select(0, -6px, absolute, true, false)
+				background $c-red
+				content ""
+				height 3px
+				width 32px
+			}
+		}
+		.items{
+			position-select(29px, 50%)
+			transform translateY(-50%)
+			transition all .5s ease
+			z-index 2
+			@media (max-width: 991px){
+				position-select(50%, 50%)
+				transform translate(-50%, -50%)
+			}
+		}
+		.item-excerpt{
+			// display none
+			color $c-white
+			font-family $t-book
+			font-size 14px
+			height auto
+			max-height 0
+			opacity 0
+			position relative
+			transition all .5s ease
+			z-index 2
+			ul{
+				margin 0
+				padding 0
+				li{
+					list-style none
+					&:before{
+						content "- "
+					}
+				}
+			}
+		}
+		.item-more{
+			flex-container()
+			position-select(50%, 30px, absolute, true, false)
+			background $c-red
+			border-radius 30px
+			color $c-white
+			opacity 0
+			transform translate(-50%, 30px)
+			transition all .25s ease
+			width 100px
+			z-index 2
+		}
+		&:hover{
+			&:before{
+				background rgba($c-black, .75)
+			}
+			.items{
+				position-select(29px, 29px)
+				transform translateY(0)
+				@media (max-width: 991px){
+					position-select(50%, 50%)
+					transform translate(-50%, -50%)
+				}
+			}
+			.item-excerpt{
+				opacity 1
+				max-height 300px
+				transition-delay .25s
+				@media (max-width: 991px){
+					display none
+				}
+			}
+			.item-more{
+				opacity 1
+				transform translate(-50%, 0)
+				transition-delay .5s
+			}
+		}
+		@media (max-width: 991px){
+			.item-holder{
+				my-shadow(0, 0px, 0px, 0px, $c-black, 0)
+			}
+		}
+	}
+}
+
+.plan-item-detail{
+	flex-container(stretch, row, center)
+	height auto
+	margin-bottom 25px
+	text-decoration none !important
+	.thumbnail{
+		background-size cover !important
+		filter grayscale(0)
+		height 300px
+		transition all .25s ease
+		width 50%
+	}
+	.title{
+		flex-container(center, row, center)
+		background $c-white
+		transition all .25s ease
+		width 50%
+		h2{
+			color $c-gray
+			font-family $t-medium
+			font-size 22px
+			letter-spacing 4.3px
+			line-height 1.18
+			position relative
+			text-decoration none !important
+			text-transform uppercase
+			&:before{
+				position-select(0, -5px, absolute, true, false)
+				background $c-red
+				content ""
+				height 3px
+				transition all .25s ease
+				width 36px
+			}
+		}
+	}
+	&:hover{
+		.thumbnail{
+			filter grayscale(100%)
+		}
+		.title{
+			background lighten($c-gray, 90%)
+			h2{
+				&:before{
+					width 100%
+				}
+			}
+		}
+	}
+	&:nth-child(even){
+		.thumbnail{
+			order 2
+		}
+		.title{
+			order 1
+		}
+	}
+	&:last-child{
+		margin-bottom 100px
+	}
+	@media (max-width: 991px){
+		flex-container(stretch, row, center, wrap)
+		.thumbnail{
+			width 100%
+		}
+		.title{
+			height 150px
+			width 100%
+		}
+		&:nth-child(even){
+			.thumbnail{
+				order 1
+			}
+			.title{
+				order 2
+			}
+		}
+	}
+}
+
+.plan-detail{
+	.content-container{
+		img{
+			margin 20px 0
+		}
+		h2{
+			color $c-gray
+			font-family $t
+			font-size 60px
+			line-height 72px
+			margin 30px 0 40px
+			text-transform uppercase
+			strong{
+				font-family $t-bold
+			}
+			@media (max-width: 767px){
+				font-size 40px
+				line-height 1.2
+			}
+			@media (max-width: 540px){
+				font-size 28px
+			}
+		}
+		p{
+			margin 10px 0
+		}
+	}
+	.those-fake-tables{
+		position relative
+		overflow-x auto
+		@media (max-width: 991px){
+			flex-wrap nowrap !important
+			justify-content flex-start !important
+		}
+	}
+	.fake-table{
+		.line{
+			flex-container(center, row, flex-start)
+			border-bottom 1px solid lighten($c-gray, 80%)
+			color $c-gray
+			font-family $t-light
+			font-size 14px
+			height 60px
+			padding 8px
+			padding-left 0
+			@media (max-width: 540px){
+				height 75px
+			}
+			&.no-border{
+				border-bottom none
+			}
+			&.title{
+				background $c-red
+				color $c-white
+				font-family $t-bold
+				font-size 16px
+				padding 18px 16px
+				text-transform uppercase
+				width 100%
+				&.center{
+					text-align center
+				}
+				&.second{
+					margin-top 20px
+				}
+			}
+			&.top-padding{
+				padding-top 20px !important
+			}
+		}
+		.item-container{
+			margin-bottom 50px
+			.line{
+				flex-container(center, row, center)
+				background $c-bg-gray
+				padding 8px 10px
+				text-align center
+				&.title{
+					background $c-red
+				}
+			}
+		}
+		@media (max-width: 991px){
+			max-width 160px
+			width 160px
+			&.floating-table{
+				position-select(0,0,absolute)
+				max-width 320px !important
+				padding-right 5px
+				width 320px !important
+			}
+			&.first-table{
+				margin-left 325px
+				padding 0
+			}
+			&.remove-padding{
+				padding 0 0 0 5px
+			}
+			&.remove-left-padding{
+				padding-left 5px
+			}
+		}
+		@media (max-width: 540px){
+			&.floating-table{
+				padding-right 5px
+				width 300px !important
+			}
+			&.first-table{
+				margin-left 305px !important
+				padding 0
+			}
+			&.remove-padding{
+				padding 0 0 0 5px
+			}
+			&.remove-left-padding{
+				padding-left 5px
+			}
+		}
+	}
+}

@@ -1,0 +1,118 @@
+.main-footer{
+	background $c-red
+	height 220px
+	padding-top 45px
+	width 100vw
+	@media (max-width: 1024px){
+		height auto !important
+	}
+	@media (max-width: 991px){
+		padding 35px 0 15px !important
+		.footer-logo{
+			flex-container()
+			margin-bottom 35px
+		}
+	}
+	p{
+		color $c-white
+		font-family $t-light
+		font-size 14px
+		letter-spacing 0
+		line-height 1.2
+		&.copyright{
+			font-size 11px
+			margin 0
+			text-align center
+			strong{
+				font-family $t-bold
+			}
+		}
+		@media (max-width: 767px){
+			text-align center
+		}
+	}
+	.footer-logo{
+		img{
+			height auto
+			max-width 200px
+			width 100%
+		}
+	}
+	.footer-title{
+		color $c-white
+		font-family $t-bold
+		font-size 16px
+		letter-spacing 1px
+		padding-bottom 3px
+		position relative
+		text-transform uppercase
+		&:after{
+			position-select(0,0,absolute,true,false)
+			background $c-white
+			content ""
+			height 2px
+			width 34px
+		}
+		@media (max-width: 767px){
+			text-align center
+			&:after{
+				left 50%
+				transform translateX(-50%)
+			}
+		}
+	}
+	.footer-list{
+		padding 0
+		li{
+			height auto
+			line-height 1.2
+			list-style none
+			margin 0
+			padding 0
+			a{
+				color $c-white
+				font-family $t-light
+				font-size 14px
+				letter-spacing 0
+				line-height 1.2
+				svg, .cls-1{
+					fill $c-white
+					transition fill .25s ease
+				}
+				&:hover{
+					color darken($c-red, 75%)
+				}
+			}
+		}
+		@media (max-width: 767px){
+			li{
+				text-align center
+			}
+		}
+	}
+	.low-footer{
+		@media (max-width: 991px){
+			margin-top 15px
+		}
+	}
+	.sociales{
+		margin 7px 0 15px
+		a{
+			margin-right 14px
+			text-decoration none
+			svg, .cls-1{
+				fill $c-white
+				transition fill .25s ease
+			}
+			&:hover{
+				svg, .cls-1{
+					fill darken($c-red, 50%)
+				}
+			}
+		}
+		@media (max-width: 767px){
+			flex-container(center, row, center)
+			margin 0 0 30px
+		}
+	}
+}

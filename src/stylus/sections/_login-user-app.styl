@@ -1,0 +1,71 @@
+.login-screen{
+	.login-items{
+		height 100vh
+		overflow hidden
+		.left-side{
+			flex-container(center, column, center)
+			height 100vh
+			overflow-y scroll
+			padding-bottom 25px
+			padding-top 100px
+			form{
+				width 80%
+			}
+			hr.fake-hr{
+				background $c-form
+				display block
+				height 0px !important
+				opacity .5
+				width 40%
+			}
+			.form-buttons-holder{
+				justify-content center
+				width 100%
+				.btn{
+					margin 0
+					&:hover{
+						background darken($c-red, 15%)
+					}
+				}
+			}
+			.login-logo{
+				height auto
+				width 40%
+			}
+			p.register{
+				color $c-gray
+				font-family $t
+				font-size 14px
+				text-align center
+				a{
+					color $c-red
+					font-family $t-bold
+					text-decoration none
+				}
+			}
+			small.mini{
+				color $c-gray
+				font-family $t
+				font-size 12px
+				text-align center
+				width 45%
+			}
+			@media (max-width: 600px){
+				form{
+					width 100%
+				}
+				small.mini{
+					width 80%
+				}
+			}
+		}
+		.right-side{
+			background url('/public/img/login-splash.png') no-repeat
+			background-position center center !important
+			background-size cover !important
+			&.register-splash{
+				background url('/public/img/register-splash.png') no-repeat
+			}
+		}
+	}
+}

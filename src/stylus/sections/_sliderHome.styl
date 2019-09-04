@@ -1,0 +1,132 @@
+.slider-home{
+	height 640px
+	overflow hidden
+	position relative
+	@media (max-width: 1024px){
+		height 80vh
+	}
+	@media (max-width: 767px){
+		height 60vh
+	}
+	.fake-div{
+		position-select(0,300px,absolute,true,false)
+	}
+	.swiper-pagination{
+		position-select(0, 74px, absolute, true, false)
+		span{
+			background $c-white
+			height 8px
+			opacity .45
+			width 8px
+			&.swiper-pagination-bullet-active{
+				opacity 1
+			}
+		}
+	}
+	.swiper-wrapper{
+		position-select(0,0)
+		height 100%
+		width 100%
+		.swiper-slide{
+			flex-container()
+			background-size cover !important
+			height 100%
+			margin -10px 0 0
+			width 100%
+			&:before{
+				position-select(0,0)
+				background rgba($c-black, .6)
+				content ""
+				height 100%
+				width 100%
+				z-index 1
+			}
+			h2{
+				color $c-white
+				text-align center
+				opacity 0
+				position relative
+				transform translateY(50px)
+				transition all .5s ease-in-out
+				z-index 2
+				&.double{
+					max-width 700px
+					span{
+						&.one{
+							font-family $t-light
+							font-size 26px
+						}
+						&.two{
+							font-family $t-bold
+							font-size 58px
+						}
+					}
+				}
+				&.multiple{
+					max-width 700px
+					span{
+						&.one,
+						&.three{
+							font-family $t-light
+							font-size 26px
+						}
+						&.two{
+							color $c-red
+							font-family $t-bold
+							font-size 58px
+						}
+						&.four{
+							color $c-white
+							font-family $t-bold
+							font-size 58px
+						}
+					}
+				}
+			}
+			&.swiper-slide-active{
+				h2{
+					opacity 1
+					transition-delay .8s
+					transform translateY(0)
+				}
+			}
+			@media (max-width: 1024px){
+				h2{
+					&.double, &.multiple{
+						span{
+							&.one,
+							&.three{
+								font-size 18px
+							}
+							&.two{
+								font-size 50px
+							}
+							&.four{
+								font-size 50px
+							}
+						}
+					}
+				}
+			}
+			@media (max-width: 767px){
+				h2{
+					&.double, &.multiple{
+						width 100%
+						span{
+							&.one,
+							&.three{
+								font-size 16px
+							}
+							&.two{
+								font-size 25px
+							}
+							&.four{
+								font-size 25px
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

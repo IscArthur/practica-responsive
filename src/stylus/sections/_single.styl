@@ -1,0 +1,219 @@
+.detail-content{
+	background $c-white
+	min-height 90vh
+	padding-top 160px
+	@media (max-width: 1024px){
+		padding-top 100px
+	}
+	a{
+		color $c-red
+		font-family $t-bold
+	}
+	h1{
+		color $c-gray
+		font-family $t-bold
+		font-size 50px
+		letter-spacing 2px
+		line-height 60px
+		margin 40px 0 60px
+		text-transform uppercase
+	}
+	img{
+		height auto
+		width 100%
+	}
+	p, ul, ol{
+		font-family $t-light
+		font-size 16px
+		line-height 19px
+		letter-spacing 0.64px
+		margin 20px 0
+	}
+	ul{
+		list-style-type disc
+		ol{
+			list-style-type lower-alpha
+		}
+	}
+	ol{
+		ol{
+			list-style-type lower-alpha
+		}
+	}
+	strong{
+		font-family $t-bold
+	}
+	.fake-h1{
+		color $c-red
+		font-family $t-bold
+		font-size 48px
+		margin-top 0
+		margin-bottom 40px
+		position relative
+		text-align center
+		text-transform uppercase
+		&:after{
+			position-select(50%, -20px, absolute, true, false)
+			background $c-red
+			content ''
+			height 3px
+			transform translate(-50%, 0)
+			width 36px
+		}
+		@media (max-width: 767px){
+			font-size 38px
+			&:after{
+				bottom -10px
+			}
+		}
+		@media (max-width: 540px){
+			font-size 18px
+			margin-bottom 20px
+			&:after{
+				bottom 0
+			}
+		}
+	}
+	.user-meta{
+		flex-container(center, row, flex-start)
+		position relative
+		img{
+			height 30px
+			margin-right 8px
+			width auto
+		}
+		p{
+			color $c-gray
+			font-family $t-bold
+			font-size 14px
+			margin 0
+			text-transform capitalize
+			&.date{
+				position-select(55px, -10px, absolute, true, false)
+				font-family $t-light
+				font-size 12px
+			}
+		}
+	}
+	.post-content{
+		margin-bottom 30px
+		h2{
+			font-family $t-bold
+			font-size 20px
+			margin 50px 0
+			text-align center
+		}
+	}
+	.single-footer{
+		flex-container(center, row, flex-end)
+		border-bottom 2px solid rgba($c-gray, .15)
+		border-top 2px solid rgba($c-gray, .15)
+		margin-bottom 30px
+		padding 15px 0 10px
+		width 100%
+		.icon-holder{
+			flex-container()
+			p{
+				font-family $t-light
+				font-size 13px
+				margin 0 7px 0 0
+			}
+			svg{
+				fill $c-gray
+				height 15px
+				width auto
+			}
+			&.views{
+				margin-right 20px
+				svg{
+					opacity .6
+				}
+			}
+		}
+		.share{
+			flex-container()
+			height 20px
+			margin-left 20px
+			p{
+				color rgba($c-gray, 50%)
+				font-family $t-bold
+				font-size 14px
+			}
+			.share-this{
+				flex-container()
+				cursor pointer
+				margin-left 10px
+				svg{
+					height 18px
+					width auto
+					transition all .25s ease-in-out
+				}
+				&.twitter{
+					svg{
+						height 15px
+					}
+				}
+				&:hover{
+					svg{
+						.cls-1{
+							fill $c-gray
+						}
+					}
+				}
+			}
+		}
+	}
+	.recent-entries{
+		font-family $t-light
+		font-size 20px
+		margin-bottom 40px
+	}
+	.recent-item{
+		color $c-gray !important
+		text-decoration none !important
+		.thumbnail{
+			background-size cover !important
+			height 241px
+			margin-bottom 30px
+			width 100%
+		}
+		.meta{
+			flex-container(flex-start, row, flex-start)
+			margin-bottom 30px
+			.data{
+				flex-container(center, row, flex-end)
+				padding 15px 0 10px
+				width 40%
+				.icon-holder{
+					flex-container()
+					p{
+						font-family $t-light
+						font-size 13px
+						margin 0 7px 0 0
+					}
+					svg{
+						fill $c-gray
+						height 15px
+						width auto
+					}
+					&.views{
+						margin-right 20px
+						svg{
+							opacity .6
+						}
+					}
+				}
+			}
+			.title{
+				color $c-gray
+				font-family $t-bold
+				font-size 20px
+				overflow hidden
+				text-decoration none
+				text-overflow ellipsis
+				white-space nowrap
+				width 60%
+			}
+		}
+	}
+}
